@@ -1,0 +1,12 @@
+C:\Users\William\Desktop\laser-src\il\obj\Debug\Laser-engraving-machine.csprojAssemblyReference.cache
+C:\Users\William\Desktop\laser-src\il\obj\Debug\微型雕刻机2.Form1.resources
+C:\Users\William\Desktop\laser-src\il\obj\Debug\微型雕刻机2.guanyu.resources
+C:\Users\William\Desktop\laser-src\il\obj\Debug\Laser-engraving-machine.csproj.GenerateResource.cache
+C:\Users\William\Desktop\laser-src\il\bin\Debug\微型雕刻机.exe
+C:\Users\William\Desktop\laser-src\il\bin\Debug\微型雕刻机.pdb
+C:\Users\William\Desktop\laser-src\il\bin\Debug\System.dll
+C:\Users\William\Desktop\laser-src\il\bin\Debug\System.Drawing.dll
+C:\Users\William\Desktop\laser-src\il\bin\Debug\System.Windows.Forms.dll
+C:\Users\William\Desktop\laser-src\il\obj\Debug\Laser-engraving-machine.csproj.CopyComplete
+C:\Users\William\Desktop\laser-src\il\obj\Debug\微型雕刻机.exe
+C:\Users\William\Desktop\laser-src\il\obj\Debug\微型雕刻机.pdb
