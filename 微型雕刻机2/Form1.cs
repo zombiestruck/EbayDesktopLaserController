@@ -3568,1012 +3568,1321 @@ namespace 微型雕刻机2
 
 		private void InitializeComponent()
 		{
-			components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(微型雕刻机2.Form1));
-			panel1 = new System.Windows.Forms.Panel();
-			button10 = new System.Windows.Forms.Button();
-			button9 = new System.Windows.Forms.Button();
-			textBox2 = new System.Windows.Forms.TextBox();
-			button18 = new System.Windows.Forms.Button();
-			button19 = new System.Windows.Forms.Button();
-			button1 = new System.Windows.Forms.Button();
-			checkBox1 = new System.Windows.Forms.CheckBox();
-			button2 = new System.Windows.Forms.Button();
-			button3 = new System.Windows.Forms.Button();
-			button6 = new System.Windows.Forms.Button();
-			button7 = new System.Windows.Forms.Button();
-			button8 = new System.Windows.Forms.Button();
-			button4 = new System.Windows.Forms.Button();
-			button5 = new System.Windows.Forms.Button();
-			com = new System.IO.Ports.SerialPort(components);
-			dakai = new System.Windows.Forms.OpenFileDialog();
-			da_kai_g = new System.Windows.Forms.OpenFileDialog();
-			fontDialog1 = new System.Windows.Forms.FontDialog();
-			panel2 = new System.Windows.Forms.Panel();
-			panel3 = new System.Windows.Forms.Panel();
-			button17 = new System.Windows.Forms.Button();
-			jdt = new System.Windows.Forms.ProgressBar();
-			button20 = new System.Windows.Forms.Button();
-			button21 = new System.Windows.Forms.Button();
-			button22 = new System.Windows.Forms.Button();
-			button23 = new System.Windows.Forms.Button();
-			button24 = new System.Windows.Forms.Button();
-			button25 = new System.Windows.Forms.Button();
-			button15 = new System.Windows.Forms.Button();
-			label3 = new System.Windows.Forms.Label();
-			label5 = new System.Windows.Forms.Label();
-			label4 = new System.Windows.Forms.Label();
-			button16 = new System.Windows.Forms.Button();
-			label6 = new System.Windows.Forms.Label();
-			button27 = new System.Windows.Forms.Button();
-			trackBar2 = new System.Windows.Forms.TrackBar();
-			label2 = new System.Windows.Forms.Label();
-			hei_bai = new System.Windows.Forms.RadioButton();
-			li_san = new System.Windows.Forms.RadioButton();
-			hui_du = new System.Windows.Forms.RadioButton();
-			textBox3 = new System.Windows.Forms.TextBox();
-			trackBar1 = new System.Windows.Forms.TrackBar();
-			label1 = new System.Windows.Forms.Label();
-			textBox1 = new System.Windows.Forms.TextBox();
-			trackBar4 = new System.Windows.Forms.TrackBar();
-			textBox5 = new System.Windows.Forms.TextBox();
-			checkBox2 = new System.Windows.Forms.CheckBox();
-			button11 = new System.Windows.Forms.Button();
-			button12 = new System.Windows.Forms.Button();
-			button13 = new System.Windows.Forms.Button();
-			button14 = new System.Windows.Forms.Button();
-			groupBox1 = new System.Windows.Forms.GroupBox();
-			groupBox2 = new System.Windows.Forms.GroupBox();
-			groupBox3 = new System.Windows.Forms.GroupBox();
-			textBox8 = new System.Windows.Forms.TextBox();
-			textBox7 = new System.Windows.Forms.TextBox();
-			label21 = new System.Windows.Forms.Label();
-			label20 = new System.Windows.Forms.Label();
-			label19 = new System.Windows.Forms.Label();
-			label18 = new System.Windows.Forms.Label();
-			button30 = new System.Windows.Forms.Button();
-			button28 = new System.Windows.Forms.Button();
-			button26 = new System.Windows.Forms.Button();
-			label13 = new System.Windows.Forms.Label();
-			textBox4 = new System.Windows.Forms.TextBox();
-			label7 = new System.Windows.Forms.Label();
-			timer1 = new System.Windows.Forms.Timer(components);
-			button29 = new System.Windows.Forms.Button();
-			button31 = new System.Windows.Forms.Button();
-			label8 = new System.Windows.Forms.Label();
-			label9 = new System.Windows.Forms.Label();
-			label10 = new System.Windows.Forms.Label();
-			label11 = new System.Windows.Forms.Label();
-			button32 = new System.Windows.Forms.Button();
-			timer2 = new System.Windows.Forms.Timer(components);
-			label12 = new System.Windows.Forms.Label();
-			timer3 = new System.Windows.Forms.Timer(components);
-			groupBox4 = new System.Windows.Forms.GroupBox();
-			button36 = new System.Windows.Forms.Button();
-			button35 = new System.Windows.Forms.Button();
-			panel6 = new System.Windows.Forms.Panel();
-			label17 = new System.Windows.Forms.Label();
-			label16 = new System.Windows.Forms.Label();
-			radioButton4 = new System.Windows.Forms.RadioButton();
-			radioButton3 = new System.Windows.Forms.RadioButton();
-			radioButton2 = new System.Windows.Forms.RadioButton();
-			radioButton5 = new System.Windows.Forms.RadioButton();
-			listBox1 = new System.Windows.Forms.ListBox();
-			trackBar5 = new System.Windows.Forms.TrackBar();
-			groupBox5 = new System.Windows.Forms.GroupBox();
-			toolTip1 = new System.Windows.Forms.ToolTip(components);
-			panel4 = new System.Windows.Forms.Panel();
-			panel5 = new System.Windows.Forms.Panel();
-			button33 = new System.Windows.Forms.Button();
-			button34 = new System.Windows.Forms.Button();
-			button37 = new System.Windows.Forms.Button();
-			panel7 = new System.Windows.Forms.Panel();
-			label14 = new System.Windows.Forms.Label();
-			progressBar1 = new System.Windows.Forms.ProgressBar();
-			timer_flash = new System.Windows.Forms.Timer(components);
-			trackBar3 = new System.Windows.Forms.TrackBar();
-			panel2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)trackBar2).BeginInit();
-			((System.ComponentModel.ISupportInitialize)trackBar1).BeginInit();
-			((System.ComponentModel.ISupportInitialize)trackBar4).BeginInit();
-			groupBox1.SuspendLayout();
-			groupBox2.SuspendLayout();
-			groupBox3.SuspendLayout();
-			groupBox4.SuspendLayout();
-			panel6.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)trackBar5).BeginInit();
-			groupBox5.SuspendLayout();
-			panel7.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)trackBar3).BeginInit();
-			SuspendLayout();
-			panel1.BackColor = System.Drawing.Color.White;
-			panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			panel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			panel1.Location = new System.Drawing.Point(25, 60);
-			panel1.Name = "panel1";
-			panel1.Size = new System.Drawing.Size(247, 176);
-			panel1.TabIndex = 1;
-			panel1.TabStop = true;
-			panel1.LocationChanged += new System.EventHandler(panel1_LocationChanged);
-			panel1.Paint += new System.Windows.Forms.PaintEventHandler(panel1_Paint);
-			panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(panel1_MouseDown);
-			panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(panel1_MouseMove);
-			panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(panel1_MouseUp);
-			button10.BackColor = System.Drawing.Color.Transparent;
-			button10.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			button10.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			button10.Location = new System.Drawing.Point(438, 187);
-			button10.Name = "button10";
-			button10.Size = new System.Drawing.Size(17, 17);
-			button10.TabIndex = 2;
-			button10.UseVisualStyleBackColor = false;
-			button10.Visible = false;
-			button10.MouseDown += new System.Windows.Forms.MouseEventHandler(button10_MouseDown);
-			button10.MouseMove += new System.Windows.Forms.MouseEventHandler(button10_MouseMove);
-			button10.MouseUp += new System.Windows.Forms.MouseEventHandler(button10_MouseUp);
-			button9.BackColor = System.Drawing.Color.Transparent;
-			button9.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
-			button9.Location = new System.Drawing.Point(453, 203);
-			button9.Name = "button9";
-			button9.Size = new System.Drawing.Size(17, 17);
-			button9.TabIndex = 1;
-			button9.UseVisualStyleBackColor = false;
-			button9.Visible = false;
-			button9.MouseDown += new System.Windows.Forms.MouseEventHandler(button9_MouseDown);
-			button9.MouseMove += new System.Windows.Forms.MouseEventHandler(button9_MouseMove);
-			button9.MouseUp += new System.Windows.Forms.MouseEventHandler(button9_MouseUp);
-			textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			textBox2.Cursor = System.Windows.Forms.Cursors.SizeAll;
-			textBox2.Font = new System.Drawing.Font("宋体", 18f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
-			textBox2.Location = new System.Drawing.Point(278, 61);
-			textBox2.Multiline = true;
-			textBox2.Name = "textBox2";
-			textBox2.Size = new System.Drawing.Size(177, 143);
-			textBox2.TabIndex = 0;
-			textBox2.Visible = false;
-			textBox2.LocationChanged += new System.EventHandler(textBox2_LocationChanged);
-			textBox2.TextChanged += new System.EventHandler(textBox2_TextChanged);
-			textBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(textBox2_MouseDown);
-			textBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(textBox2_MouseMove);
-			textBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(textBox2_MouseUp);
-			button18.Location = new System.Drawing.Point(1001, 210);
-			button18.Name = "button18";
-			button18.Size = new System.Drawing.Size(35, 35);
-			button18.TabIndex = 30;
-			button18.UseVisualStyleBackColor = true;
-			button18.Visible = false;
-			button18.Click += new System.EventHandler(button18_Click);
-			button19.Location = new System.Drawing.Point(984, 211);
-			button19.Name = "button19";
-			button19.Size = new System.Drawing.Size(35, 35);
-			button19.TabIndex = 31;
-			button19.UseVisualStyleBackColor = true;
-			button19.Visible = false;
-			button19.Click += new System.EventHandler(button19_Click);
-			button1.BackColor = System.Drawing.Color.Transparent;
-			button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			button1.ForeColor = System.Drawing.Color.Blue;
-			button1.Location = new System.Drawing.Point(532, 14);
-			button1.Name = "button1";
-			button1.Size = new System.Drawing.Size(107, 32);
-			button1.TabIndex = 1;
-			button1.Text = "設備接続";
-			button1.UseVisualStyleBackColor = false;
-			button1.Click += new System.EventHandler(button1_Click);
-			checkBox1.AutoSize = true;
-			checkBox1.Location = new System.Drawing.Point(949, 7);
-			checkBox1.Name = "checkBox1";
-			checkBox1.Size = new System.Drawing.Size(66, 16);
-			checkBox1.TabIndex = 2;
-			checkBox1.Text = "250*250";
-			checkBox1.UseVisualStyleBackColor = true;
-			checkBox1.Visible = false;
-			button2.BackColor = System.Drawing.Color.Transparent;
-			button2.Location = new System.Drawing.Point(532, 52);
-			button2.Name = "button2";
-			button2.Size = new System.Drawing.Size(107, 33);
-			button2.TabIndex = 3;
-			button2.Text = "絵図導入";
-			button2.UseVisualStyleBackColor = false;
-			button2.Click += new System.EventHandler(button2_Click);
-			button3.BackColor = System.Drawing.Color.Transparent;
-			button3.ForeColor = System.Drawing.Color.Red;
-			button3.Location = new System.Drawing.Point(825, 7);
-			button3.Name = "button3";
-			button3.Size = new System.Drawing.Size(94, 30);
-			button3.TabIndex = 4;
-			button3.Text = "模拟发送错误";
-			button3.UseVisualStyleBackColor = false;
-			button3.Click += new System.EventHandler(button3_Click);
-			button6.BackColor = System.Drawing.Color.Transparent;
-			button6.Location = new System.Drawing.Point(917, 73);
-			button6.Name = "button6";
-			button6.Size = new System.Drawing.Size(107, 30);
-			button6.TabIndex = 6;
-			button6.Text = "打开G代码";
-			button6.UseVisualStyleBackColor = false;
-			button6.Click += new System.EventHandler(button6_Click);
-			button7.BackColor = System.Drawing.Color.Transparent;
-			button7.Location = new System.Drawing.Point(994, 105);
-			button7.Name = "button7";
-			button7.Size = new System.Drawing.Size(107, 30);
-			button7.TabIndex = 11;
-			button7.Text = "快进>>";
-			button7.UseVisualStyleBackColor = false;
-			button7.Click += new System.EventHandler(button7_Click);
-			button8.BackColor = System.Drawing.Color.Transparent;
-			button8.Location = new System.Drawing.Point(917, 109);
-			button8.Name = "button8";
-			button8.Size = new System.Drawing.Size(107, 30);
-			button8.TabIndex = 10;
-			button8.Text = "<<快退";
-			button8.UseVisualStyleBackColor = false;
-			button8.Click += new System.EventHandler(button8_Click);
-			button4.BackColor = System.Drawing.Color.Transparent;
-			button4.ForeColor = System.Drawing.Color.Red;
-			button4.Location = new System.Drawing.Point(532, 91);
-			button4.Name = "button4";
-			button4.Size = new System.Drawing.Size(71, 36);
-			button4.TabIndex = 12;
-			button4.Text = "スタ\u30fcト";
-			button4.UseVisualStyleBackColor = false;
-			button4.Click += new System.EventHandler(button4_Click);
-			button4.MouseDown += new System.Windows.Forms.MouseEventHandler(button4_MouseDown);
-			button4.MouseUp += new System.Windows.Forms.MouseEventHandler(button4_MouseUp);
-			button5.BackColor = System.Drawing.Color.Transparent;
-			button5.Location = new System.Drawing.Point(655, 52);
-			button5.Name = "button5";
-			button5.Size = new System.Drawing.Size(107, 33);
-			button5.TabIndex = 13;
-			button5.Text = "文字編集";
-			button5.UseVisualStyleBackColor = false;
-			button5.Click += new System.EventHandler(button5_Click);
-			com.ErrorReceived += new System.IO.Ports.SerialErrorReceivedEventHandler(com_ErrorReceived);
-			com.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(com_DataReceived);
-			dakai.FileName = "openFileDialog1";
-			dakai.Filter = "ビットマップファイル|*.bmp;*.jpg;*.jpge;*.png;";
-			da_kai_g.FileName = "openFileDialog1";
-			da_kai_g.Filter = "刀路文件|*.NC|所有文件|*.*";
-			fontDialog1.Font = new System.Drawing.Font("宋体", 24f, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 134);
-			panel2.BackColor = System.Drawing.Color.Transparent;
-			panel2.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel2.BackgroundImage");
-			panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			panel2.Controls.Add(panel3);
-			panel2.Location = new System.Drawing.Point(692, 14);
-			panel2.Name = "panel2";
-			panel2.Size = new System.Drawing.Size(32, 32);
-			panel2.TabIndex = 23;
-			panel2.Paint += new System.Windows.Forms.PaintEventHandler(panel2_Paint);
-			panel3.BackColor = System.Drawing.Color.Transparent;
-			panel3.BackgroundImage = (System.Drawing.Image)resources.GetObject("panel3.BackgroundImage");
-			panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			panel3.Location = new System.Drawing.Point(0, 0);
-			panel3.Name = "panel3";
-			panel3.Size = new System.Drawing.Size(32, 32);
-			panel3.TabIndex = 44;
-			panel3.Visible = false;
-			button17.BackColor = System.Drawing.Color.Transparent;
-			button17.Location = new System.Drawing.Point(962, 387);
-			button17.Name = "button17";
-			button17.Size = new System.Drawing.Size(215, 38);
-			button17.TabIndex = 28;
-			button17.Text = "发送脱机数据";
-			button17.UseVisualStyleBackColor = false;
-			button17.Click += new System.EventHandler(button17_Click);
-			jdt.Location = new System.Drawing.Point(963, 427);
-			jdt.Name = "jdt";
-			jdt.Size = new System.Drawing.Size(213, 10);
-			jdt.TabIndex = 29;
-			jdt.Visible = false;
-			button20.BackColor = System.Drawing.Color.Transparent;
-			button20.Image = (System.Drawing.Image)resources.GetObject("button20.Image");
-			button20.Location = new System.Drawing.Point(178, 9);
-			button20.Name = "button20";
-			button20.Size = new System.Drawing.Size(35, 35);
-			button20.TabIndex = 32;
-			button20.UseVisualStyleBackColor = false;
-			button20.Click += new System.EventHandler(button20_Click);
-			button21.BackColor = System.Drawing.Color.Transparent;
-			button21.Image = (System.Drawing.Image)resources.GetObject("button21.Image");
-			button21.Location = new System.Drawing.Point(25, 9);
-			button21.Name = "button21";
-			button21.Size = new System.Drawing.Size(35, 35);
-			button21.TabIndex = 33;
-			button21.UseVisualStyleBackColor = false;
-			button21.Click += new System.EventHandler(button21_Click);
-			button22.BackColor = System.Drawing.Color.Transparent;
-			button22.Image = (System.Drawing.Image)resources.GetObject("button22.Image");
-			button22.Location = new System.Drawing.Point(76, 9);
-			button22.Name = "button22";
-			button22.Size = new System.Drawing.Size(35, 35);
-			button22.TabIndex = 34;
-			button22.UseVisualStyleBackColor = false;
-			button22.Click += new System.EventHandler(button22_Click);
-			button23.BackColor = System.Drawing.Color.Transparent;
-			button23.Image = (System.Drawing.Image)resources.GetObject("button23.Image");
-			button23.Location = new System.Drawing.Point(928, 29);
-			button23.Name = "button23";
-			button23.Size = new System.Drawing.Size(35, 35);
-			button23.TabIndex = 35;
-			button23.UseVisualStyleBackColor = false;
-			button23.Click += new System.EventHandler(button23_Click);
-			button24.BackColor = System.Drawing.Color.Transparent;
-			button24.Location = new System.Drawing.Point(690, 91);
-			button24.Name = "button24";
-			button24.Size = new System.Drawing.Size(71, 36);
-			button24.TabIndex = 37;
-			button24.Text = "停止";
-			button24.UseVisualStyleBackColor = false;
-			button24.Click += new System.EventHandler(button24_Click);
-			button25.BackColor = System.Drawing.Color.Transparent;
-			button25.Image = (System.Drawing.Image)resources.GetObject("button25.Image");
-			button25.Location = new System.Drawing.Point(127, 9);
-			button25.Name = "button25";
-			button25.Size = new System.Drawing.Size(35, 35);
-			button25.TabIndex = 31;
-			button25.UseVisualStyleBackColor = false;
-			button25.Click += new System.EventHandler(button25_Click);
-			button15.BackColor = System.Drawing.Color.Transparent;
-			button15.Image = (System.Drawing.Image)resources.GetObject("button15.Image");
-			button15.Location = new System.Drawing.Point(280, 9);
-			button15.Name = "button15";
-			button15.Size = new System.Drawing.Size(35, 35);
-			button15.TabIndex = 31;
-			button15.UseVisualStyleBackColor = false;
-			button15.Click += new System.EventHandler(button15_Click_1);
-			label3.AutoSize = true;
-			label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			label3.Font = new System.Drawing.Font("宋体", 13f);
-			label3.Location = new System.Drawing.Point(875, 534);
-			label3.Name = "label3";
-			label3.Size = new System.Drawing.Size(44, 18);
-			label3.TabIndex = 32;
-			label3.Text = "缩放";
-			label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			label5.Font = new System.Drawing.Font("宋体", 18f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 134);
-			label5.ForeColor = System.Drawing.Color.Blue;
-			label5.Location = new System.Drawing.Point(1013, 509);
-			label5.Name = "label5";
-			label5.Size = new System.Drawing.Size(92, 31);
-			label5.TabIndex = 41;
-			label5.Text = "Y：";
-			label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			label4.Font = new System.Drawing.Font("宋体", 18f, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 134);
-			label4.ForeColor = System.Drawing.Color.Blue;
-			label4.Location = new System.Drawing.Point(952, 479);
-			label4.Name = "label4";
-			label4.Size = new System.Drawing.Size(92, 31);
-			label4.TabIndex = 42;
-			label4.Text = "X：";
-			button16.BackColor = System.Drawing.Color.Transparent;
-			button16.ForeColor = System.Drawing.Color.Red;
-			button16.Location = new System.Drawing.Point(928, 145);
-			button16.Name = "button16";
-			button16.Size = new System.Drawing.Size(53, 30);
-			button16.TabIndex = 43;
-			button16.Text = "开始";
-			button16.UseVisualStyleBackColor = false;
-			button16.Visible = false;
-			button16.Click += new System.EventHandler(button16_Click_1);
-			label6.AutoSize = true;
-			label6.Location = new System.Drawing.Point(954, 289);
-			label6.Name = "label6";
-			label6.Size = new System.Drawing.Size(65, 12);
-			label6.TabIndex = 47;
-			label6.Text = "激光功率：";
-			button27.BackColor = System.Drawing.Color.Transparent;
-			button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			button27.Image = (System.Drawing.Image)resources.GetObject("button27.Image");
-			button27.Location = new System.Drawing.Point(229, 9);
-			button27.Name = "button27";
-			button27.Size = new System.Drawing.Size(35, 35);
-			button27.TabIndex = 52;
-			button27.UseVisualStyleBackColor = false;
-			button27.Click += new System.EventHandler(button27_Click);
-			trackBar2.Location = new System.Drawing.Point(3, 20);
-			trackBar2.Maximum = 253;
-			trackBar2.Name = "trackBar2";
-			trackBar2.Size = new System.Drawing.Size(194, 45);
-			trackBar2.TabIndex = 16;
-			trackBar2.Value = 128;
-			trackBar2.Scroll += new System.EventHandler(trackBar2_Scroll);
-			trackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(trackBar2_MouseUp);
-			label2.AutoSize = true;
-			label2.Location = new System.Drawing.Point(869, 244);
-			label2.Name = "label2";
-			label2.Size = new System.Drawing.Size(65, 12);
-			label2.TabIndex = 17;
-			label2.Text = "絵図調整：";
-			label2.Visible = false;
-			hei_bai.AutoSize = true;
-			hei_bai.Checked = true;
-			hei_bai.Location = new System.Drawing.Point(6, 24);
-			hei_bai.Name = "hei_bai";
-			hei_bai.Size = new System.Drawing.Size(47, 16);
-			hei_bai.TabIndex = 49;
-			hei_bai.TabStop = true;
-			hei_bai.Text = "黒白";
-			hei_bai.UseVisualStyleBackColor = true;
-			hei_bai.CheckedChanged += new System.EventHandler(hei_bai_CheckedChanged);
-			li_san.AutoSize = true;
-			li_san.Location = new System.Drawing.Point(6, 43);
-			li_san.Name = "li_san";
-			li_san.Size = new System.Drawing.Size(47, 16);
-			li_san.TabIndex = 50;
-			li_san.Text = "离散";
-			li_san.UseVisualStyleBackColor = true;
-			li_san.CheckedChanged += new System.EventHandler(li_san_CheckedChanged);
-			li_san.MouseDown += new System.Windows.Forms.MouseEventHandler(li_san_MouseDown);
-			hui_du.AutoSize = true;
-			hui_du.Location = new System.Drawing.Point(129, 24);
-			hui_du.Name = "hui_du";
-			hui_du.Size = new System.Drawing.Size(107, 16);
-			hui_du.TabIndex = 51;
-			hui_du.Text = "グレ\u30fcスケ\u30fcル";
-			hui_du.UseVisualStyleBackColor = true;
-			hui_du.Visible = false;
-			hui_du.CheckedChanged += new System.EventHandler(hui_du_CheckedChanged);
-			textBox3.BackColor = System.Drawing.Color.Gainsboro;
-			textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			textBox3.Location = new System.Drawing.Point(195, 23);
-			textBox3.Name = "textBox3";
-			textBox3.ReadOnly = true;
-			textBox3.Size = new System.Drawing.Size(33, 14);
-			textBox3.TabIndex = 18;
-			textBox3.Text = "128";
-			textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			textBox3.TextChanged += new System.EventHandler(textBox3_TextChanged);
-			trackBar1.Location = new System.Drawing.Point(3, 20);
-			trackBar1.Maximum = 100;
-			trackBar1.Minimum = 1;
-			trackBar1.Name = "trackBar1";
-			trackBar1.Size = new System.Drawing.Size(191, 45);
-			trackBar1.TabIndex = 8;
-			trackBar1.Value = 10;
-			trackBar1.Scroll += new System.EventHandler(trackBar1_Scroll);
-			trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(trackBar1_MouseUp);
-			label1.AutoSize = true;
-			label1.Location = new System.Drawing.Point(869, 371);
-			label1.Name = "label1";
-			label1.Size = new System.Drawing.Size(101, 12);
-			label1.TabIndex = 9;
-			label1.Text = "彫刻の深さ調整：";
-			label1.Visible = false;
-			textBox1.BackColor = System.Drawing.Color.Gainsboro;
-			textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			textBox1.Location = new System.Drawing.Point(195, 23);
-			textBox1.Name = "textBox1";
-			textBox1.ReadOnly = true;
-			textBox1.Size = new System.Drawing.Size(33, 14);
-			textBox1.TabIndex = 14;
-			textBox1.Text = "10";
-			textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			textBox1.TextChanged += new System.EventHandler(textBox1_TextChanged);
-			trackBar4.Location = new System.Drawing.Point(2, 15);
-			trackBar4.Maximum = 100;
-			trackBar4.Name = "trackBar4";
-			trackBar4.Size = new System.Drawing.Size(195, 45);
-			trackBar4.TabIndex = 46;
-			trackBar4.Value = 100;
-			trackBar4.Scroll += new System.EventHandler(trackBar4_Scroll);
-			trackBar4.MouseUp += new System.Windows.Forms.MouseEventHandler(trackBar4_MouseUp);
-			textBox5.BackColor = System.Drawing.Color.Gainsboro;
-			textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			textBox5.Location = new System.Drawing.Point(191, 15);
-			textBox5.Name = "textBox5";
-			textBox5.ReadOnly = true;
-			textBox5.Size = new System.Drawing.Size(35, 14);
-			textBox5.TabIndex = 48;
-			textBox5.Text = "100";
-			textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			textBox5.TextChanged += new System.EventHandler(textBox5_TextChanged);
-			checkBox2.AutoSize = true;
-			checkBox2.Location = new System.Drawing.Point(866, 404);
-			checkBox2.Name = "checkBox2";
-			checkBox2.Size = new System.Drawing.Size(60, 16);
-			checkBox2.TabIndex = 15;
-			checkBox2.Text = "框定位";
-			checkBox2.UseVisualStyleBackColor = true;
-			checkBox2.Visible = false;
-			checkBox2.CheckedChanged += new System.EventHandler(checkBox2_CheckedChanged);
-			button11.BackColor = System.Drawing.Color.Transparent;
-			button11.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-			button11.Location = new System.Drawing.Point(82, 62);
-			button11.Name = "button11";
-			button11.Size = new System.Drawing.Size(67, 35);
-			button11.TabIndex = 19;
-			button11.Text = "↑";
-			button11.UseVisualStyleBackColor = false;
-			button11.Click += new System.EventHandler(button11_Click);
-			button12.BackColor = System.Drawing.Color.Transparent;
-			button12.Location = new System.Drawing.Point(82, 141);
-			button12.Name = "button12";
-			button12.Size = new System.Drawing.Size(67, 35);
-			button12.TabIndex = 20;
-			button12.Text = "↓";
-			button12.UseVisualStyleBackColor = false;
-			button12.Click += new System.EventHandler(button12_Click);
-			button13.BackColor = System.Drawing.Color.Transparent;
-			button13.Location = new System.Drawing.Point(9, 101);
-			button13.Name = "button13";
-			button13.Size = new System.Drawing.Size(67, 35);
-			button13.TabIndex = 21;
-			button13.Text = "←";
-			button13.UseVisualStyleBackColor = false;
-			button13.Click += new System.EventHandler(button13_Click);
-			button14.BackColor = System.Drawing.Color.Transparent;
-			button14.Location = new System.Drawing.Point(155, 101);
-			button14.Name = "button14";
-			button14.Size = new System.Drawing.Size(67, 35);
-			button14.TabIndex = 22;
-			button14.Text = "→";
-			button14.UseVisualStyleBackColor = false;
-			button14.Click += new System.EventHandler(button14_Click);
-			groupBox1.Controls.Add(hui_du);
-			groupBox1.Controls.Add(li_san);
-			groupBox1.Controls.Add(hei_bai);
-			groupBox1.Location = new System.Drawing.Point(532, 131);
-			groupBox1.Name = "groupBox1";
-			groupBox1.Size = new System.Drawing.Size(231, 65);
-			groupBox1.TabIndex = 53;
-			groupBox1.TabStop = false;
-			groupBox1.Text = "彫刻スタイル選択";
-			groupBox2.Controls.Add(textBox1);
-			groupBox2.Controls.Add(trackBar1);
-			groupBox2.Location = new System.Drawing.Point(532, 301);
-			groupBox2.Name = "groupBox2";
-			groupBox2.Size = new System.Drawing.Size(230, 50);
-			groupBox2.TabIndex = 54;
-			groupBox2.TabStop = false;
-			groupBox2.Text = "レ\u30fcザ\u30fc彫刻パラメ\u30fcタ調整";
-			groupBox3.Controls.Add(textBox8);
-			groupBox3.Controls.Add(textBox7);
-			groupBox3.Controls.Add(label21);
-			groupBox3.Controls.Add(label20);
-			groupBox3.Controls.Add(label19);
-			groupBox3.Controls.Add(label18);
-			groupBox3.Controls.Add(button30);
-			groupBox3.Controls.Add(button28);
-			groupBox3.Controls.Add(button26);
-			groupBox3.Controls.Add(button14);
-			groupBox3.Controls.Add(button13);
-			groupBox3.Controls.Add(button12);
-			groupBox3.Controls.Add(button11);
-			groupBox3.Location = new System.Drawing.Point(534, 357);
-			groupBox3.Name = "groupBox3";
-			groupBox3.Size = new System.Drawing.Size(229, 204);
-			groupBox3.TabIndex = 55;
-			groupBox3.TabStop = false;
-			groupBox3.Text = "レ\u30fcザ\u30fc位置調整";
-			groupBox3.Enter += new System.EventHandler(groupBox3_Enter);
-			textBox8.Location = new System.Drawing.Point(156, 178);
-			textBox8.Name = "textBox8";
-			textBox8.Size = new System.Drawing.Size(46, 21);
-			textBox8.TabIndex = 30;
-			textBox8.Text = "10";
-			textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(textBox8_KeyPress);
-			textBox7.Location = new System.Drawing.Point(41, 178);
-			textBox7.Name = "textBox7";
-			textBox7.Size = new System.Drawing.Size(46, 21);
-			textBox7.TabIndex = 29;
-			textBox7.Text = "10";
-			textBox7.TextChanged += new System.EventHandler(textBox7_TextChanged);
-			textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(textBox7_KeyPress);
-			label21.AutoSize = true;
-			label21.Location = new System.Drawing.Point(206, 183);
-			label21.Name = "label21";
-			label21.Size = new System.Drawing.Size(17, 12);
-			label21.TabIndex = 38;
-			label21.Text = "MM";
-			label20.AutoSize = true;
-			label20.Location = new System.Drawing.Point(91, 183);
-			label20.Name = "label20";
-			label20.Size = new System.Drawing.Size(17, 12);
-			label20.TabIndex = 37;
-			label20.Text = "MM";
-			label19.AutoSize = true;
-			label19.Location = new System.Drawing.Point(119, 181);
-			label19.Name = "label19";
-			label19.Size = new System.Drawing.Size(41, 12);
-			label19.TabIndex = 36;
-			label19.Text = "高度：";
-			label18.AutoSize = true;
-			label18.Location = new System.Drawing.Point(6, 181);
-			label18.Name = "label18";
-			label18.Size = new System.Drawing.Size(41, 12);
-			label18.TabIndex = 35;
-			label18.Text = "宽度：";
-			button30.BackColor = System.Drawing.Color.Transparent;
-			button30.Location = new System.Drawing.Point(82, 101);
-			button30.Name = "button30";
-			button30.Size = new System.Drawing.Size(67, 34);
-			button30.TabIndex = 28;
-			button30.Text = "中心に戻る";
-			button30.UseVisualStyleBackColor = false;
-			button30.Click += new System.EventHandler(button30_Click);
-			button28.BackColor = System.Drawing.Color.Transparent;
-			button28.Location = new System.Drawing.Point(37, 20);
-			button28.Name = "button28";
-			button28.Size = new System.Drawing.Size(75, 36);
-			button28.TabIndex = 26;
-			button28.Text = "彫刻範囲プレビュ\u30fc";
-			button28.UseVisualStyleBackColor = false;
-			button28.Click += new System.EventHandler(button28_Click);
-			button26.BackColor = System.Drawing.Color.Transparent;
-			button26.Location = new System.Drawing.Point(117, 20);
-			button26.Name = "button26";
-			button26.Size = new System.Drawing.Size(75, 36);
-			button26.TabIndex = 25;
-			button26.Text = "原点に戻る";
-			button26.UseVisualStyleBackColor = false;
-			button26.Click += new System.EventHandler(button26_Click_1);
-			label13.AutoSize = true;
-			label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-			label13.Font = new System.Drawing.Font("宋体", 13f);
-			label13.Location = new System.Drawing.Point(1034, 538);
-			label13.Name = "label13";
-			label13.Size = new System.Drawing.Size(44, 18);
-			label13.TabIndex = 37;
-			label13.Text = "缩放";
-			label13.Click += new System.EventHandler(label13_Click);
-			textBox4.CausesValidation = false;
-			textBox4.Location = new System.Drawing.Point(866, 318);
-			textBox4.Name = "textBox4";
-			textBox4.Size = new System.Drawing.Size(53, 21);
-			textBox4.TabIndex = 24;
-			textBox4.Text = "20";
-			textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-			textBox4.TextChanged += new System.EventHandler(textBox4_TextChanged);
-			textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(textBox4_KeyPress);
-			label7.AutoSize = true;
-			label7.Location = new System.Drawing.Point(851, 420);
-			label7.Name = "label7";
-			label7.Size = new System.Drawing.Size(53, 12);
-			label7.TabIndex = 27;
-			label7.Text = "步进值：";
-			label7.Visible = false;
-			label7.Click += new System.EventHandler(label7_Click);
-			timer1.Enabled = true;
-			timer1.Interval = 300;
-			timer1.Tick += new System.EventHandler(timer1_Tick);
-			button29.BackColor = System.Drawing.Color.Transparent;
-			button29.ForeColor = System.Drawing.Color.Blue;
-			button29.Location = new System.Drawing.Point(611, 91);
-			button29.Name = "button29";
-			button29.Size = new System.Drawing.Size(71, 36);
-			button29.TabIndex = 56;
-			button29.Text = "一時停止";
-			button29.UseVisualStyleBackColor = false;
-			button29.Click += new System.EventHandler(button29_Click);
-			button29.MouseDown += new System.Windows.Forms.MouseEventHandler(button29_MouseDown);
-			button31.Location = new System.Drawing.Point(871, 278);
-			button31.Name = "button31";
-			button31.Size = new System.Drawing.Size(55, 19);
-			button31.TabIndex = 57;
-			button31.Text = "button31";
-			button31.UseVisualStyleBackColor = true;
-			button31.Visible = false;
-			button31.Click += new System.EventHandler(button31_Click);
-			label8.BackColor = System.Drawing.Color.Black;
-			label8.Location = new System.Drawing.Point(25, 60);
-			label8.Name = "label8";
-			label8.Size = new System.Drawing.Size(500, 1);
-			label8.TabIndex = 58;
-			label8.Text = "label8";
-			label9.BackColor = System.Drawing.Color.Black;
-			label9.Location = new System.Drawing.Point(25, 560);
-			label9.Name = "label9";
-			label9.Size = new System.Drawing.Size(500, 1);
-			label9.TabIndex = 59;
-			label9.Text = "label9";
-			label10.BackColor = System.Drawing.Color.Black;
-			label10.Location = new System.Drawing.Point(25, 60);
-			label10.Name = "label10";
-			label10.Size = new System.Drawing.Size(1, 500);
-			label10.TabIndex = 60;
-			label10.Text = "label10";
-			label11.BackColor = System.Drawing.Color.Black;
-			label11.Location = new System.Drawing.Point(525, 60);
-			label11.Name = "label11";
-			label11.Size = new System.Drawing.Size(1, 500);
-			label11.TabIndex = 61;
-			label11.Text = "label11";
-			button32.BackColor = System.Drawing.Color.Transparent;
-			button32.Font = new System.Drawing.Font("宋体", 20f);
-			button32.Image = (System.Drawing.Image)resources.GetObject("button32.Image");
-			button32.Location = new System.Drawing.Point(331, 9);
-			button32.Name = "button32";
-			button32.Size = new System.Drawing.Size(35, 35);
-			button32.TabIndex = 62;
-			button32.UseVisualStyleBackColor = false;
-			button32.Click += new System.EventHandler(button32_Click);
-			timer2.Enabled = true;
-			timer2.Tick += new System.EventHandler(timer2_Tick);
-			label12.AutoSize = true;
-			label12.BackColor = System.Drawing.Color.Transparent;
-			label12.Location = new System.Drawing.Point(32, 543);
-			label12.Name = "label12";
-			label12.Size = new System.Drawing.Size(0, 12);
-			label12.TabIndex = 63;
-			timer3.Interval = 1000;
-			timer3.Tick += new System.EventHandler(timer3_Tick);
-			groupBox4.Controls.Add(trackBar4);
-			groupBox4.Controls.Add(textBox5);
-			groupBox4.Location = new System.Drawing.Point(532, 251);
-			groupBox4.Name = "groupBox4";
-			groupBox4.Size = new System.Drawing.Size(231, 50);
-			groupBox4.TabIndex = 64;
-			groupBox4.TabStop = false;
-			groupBox4.Text = "レ\u30fcザ\u30fc彫刻パラメ\u30fcタ調整";
-			button36.BackColor = System.Drawing.Color.Transparent;
-			button36.Font = new System.Drawing.Font("宋体", 20f);
-			button36.Image = (System.Drawing.Image)resources.GetObject("button36.Image");
-			button36.Location = new System.Drawing.Point(484, 9);
-			button36.Name = "button36";
-			button36.Size = new System.Drawing.Size(35, 35);
-			button36.TabIndex = 76;
-			button36.UseVisualStyleBackColor = false;
-			button36.Click += new System.EventHandler(button36_Click);
-			button35.BackColor = System.Drawing.Color.Transparent;
-			button35.Font = new System.Drawing.Font("宋体", 20f);
-			button35.Image = (System.Drawing.Image)resources.GetObject("button35.Image");
-			button35.Location = new System.Drawing.Point(382, 9);
-			button35.Name = "button35";
-			button35.Size = new System.Drawing.Size(35, 35);
-			button35.TabIndex = 75;
-			button35.UseVisualStyleBackColor = false;
-			button35.Click += new System.EventHandler(button35_Click);
-			panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			panel6.Controls.Add(label17);
-			panel6.Controls.Add(label16);
-			panel6.Controls.Add(radioButton4);
-			panel6.Controls.Add(radioButton3);
-			panel6.Controls.Add(radioButton2);
-			panel6.Controls.Add(radioButton5);
-			panel6.Controls.Add(listBox1);
-			panel6.Controls.Add(trackBar5);
-			panel6.Location = new System.Drawing.Point(127, 271);
-			panel6.Name = "panel6";
-			panel6.Size = new System.Drawing.Size(303, 290);
-			panel6.TabIndex = 77;
-			panel6.Visible = false;
-			label17.AutoSize = true;
-			label17.Location = new System.Drawing.Point(14, 35);
-			label17.Name = "label17";
-			label17.Size = new System.Drawing.Size(17, 12);
-			label17.TabIndex = 13;
-			label17.Text = "16";
-			label16.BackColor = System.Drawing.Color.FromArgb(128, 255, 255);
-			label16.Location = new System.Drawing.Point(0, 0);
-			label16.Name = "label16";
-			label16.Size = new System.Drawing.Size(303, 24);
-			label16.TabIndex = 12;
-			label16.Text = "字体选择";
-			label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			label16.MouseDown += new System.Windows.Forms.MouseEventHandler(label16_MouseDown);
-			label16.MouseMove += new System.Windows.Forms.MouseEventHandler(label16_MouseMove);
-			label16.MouseUp += new System.Windows.Forms.MouseEventHandler(label16_MouseUp);
-			radioButton4.AutoSize = true;
-			radioButton4.Location = new System.Drawing.Point(198, 253);
-			radioButton4.Name = "radioButton4";
-			radioButton4.Size = new System.Drawing.Size(71, 16);
-			radioButton4.TabIndex = 11;
-			radioButton4.Text = "粗体斜体";
-			radioButton4.UseVisualStyleBackColor = true;
-			radioButton4.CheckedChanged += new System.EventHandler(radioButton4_CheckedChanged);
-			radioButton3.AutoSize = true;
-			radioButton3.Location = new System.Drawing.Point(198, 192);
-			radioButton3.Name = "radioButton3";
-			radioButton3.Size = new System.Drawing.Size(47, 16);
-			radioButton3.TabIndex = 10;
-			radioButton3.Text = "斜体";
-			radioButton3.UseVisualStyleBackColor = true;
-			radioButton3.CheckedChanged += new System.EventHandler(radioButton3_CheckedChanged);
-			radioButton2.AutoSize = true;
-			radioButton2.Location = new System.Drawing.Point(198, 131);
-			radioButton2.Name = "radioButton2";
-			radioButton2.Size = new System.Drawing.Size(47, 16);
-			radioButton2.TabIndex = 9;
-			radioButton2.Text = "粗体";
-			radioButton2.UseVisualStyleBackColor = true;
-			radioButton2.CheckedChanged += new System.EventHandler(radioButton2_CheckedChanged);
-			radioButton5.AutoSize = true;
-			radioButton5.Checked = true;
-			radioButton5.Location = new System.Drawing.Point(198, 70);
-			radioButton5.Name = "radioButton5";
-			radioButton5.Size = new System.Drawing.Size(47, 16);
-			radioButton5.TabIndex = 8;
-			radioButton5.TabStop = true;
-			radioButton5.Text = "常规";
-			radioButton5.UseVisualStyleBackColor = true;
-			radioButton5.CheckedChanged += new System.EventHandler(radioButton5_CheckedChanged);
-			listBox1.FormattingEnabled = true;
-			listBox1.ItemHeight = 12;
-			listBox1.Location = new System.Drawing.Point(20, 68);
-			listBox1.Name = "listBox1";
-			listBox1.Size = new System.Drawing.Size(172, 208);
-			listBox1.TabIndex = 7;
-			listBox1.SelectedIndexChanged += new System.EventHandler(listBox1_SelectedIndexChanged);
-			trackBar5.Location = new System.Drawing.Point(38, 29);
-			trackBar5.Maximum = 100;
-			trackBar5.Minimum = 1;
-			trackBar5.Name = "trackBar5";
-			trackBar5.Size = new System.Drawing.Size(244, 45);
-			trackBar5.TabIndex = 6;
-			trackBar5.TickStyle = System.Windows.Forms.TickStyle.None;
-			trackBar5.Value = 16;
-			trackBar5.Scroll += new System.EventHandler(trackBar5_Scroll);
-			groupBox5.Controls.Add(textBox3);
-			groupBox5.Controls.Add(trackBar2);
-			groupBox5.Location = new System.Drawing.Point(532, 191);
-			groupBox5.Name = "groupBox5";
-			groupBox5.Size = new System.Drawing.Size(231, 57);
-			groupBox5.TabIndex = 78;
-			groupBox5.TabStop = false;
-			groupBox5.Text = "groupBox5";
-			toolTip1.IsBalloon = true;
-			panel4.Location = new System.Drawing.Point(29, 43);
-			panel4.Name = "panel4";
-			panel4.Size = new System.Drawing.Size(76, 17);
-			panel4.TabIndex = 79;
-			panel4.Paint += new System.Windows.Forms.PaintEventHandler(panel4_Paint);
-			panel5.Location = new System.Drawing.Point(8, 203);
-			panel5.Name = "panel5";
-			panel5.Size = new System.Drawing.Size(17, 77);
-			panel5.TabIndex = 80;
-			panel5.Paint += new System.Windows.Forms.PaintEventHandler(panel5_Paint);
-			button33.BackColor = System.Drawing.Color.Transparent;
-			button33.Font = new System.Drawing.Font("宋体", 20f);
-			button33.Image = (System.Drawing.Image)resources.GetObject("button33.Image");
-			button33.Location = new System.Drawing.Point(433, 9);
-			button33.Name = "button33";
-			button33.Size = new System.Drawing.Size(35, 35);
-			button33.TabIndex = 81;
-			button33.UseVisualStyleBackColor = false;
-			button33.Click += new System.EventHandler(button33_Click);
-			button34.BackColor = System.Drawing.Color.Transparent;
-			button34.ForeColor = System.Drawing.Color.Red;
-			button34.Location = new System.Drawing.Point(825, 43);
-			button34.Name = "button34";
-			button34.Size = new System.Drawing.Size(94, 30);
-			button34.TabIndex = 82;
-			button34.Text = "模拟接收错误";
-			button34.UseVisualStyleBackColor = false;
-			button34.Click += new System.EventHandler(button34_Click);
-			button37.BackColor = System.Drawing.Color.Transparent;
-			button37.Font = new System.Drawing.Font("宋体", 20f);
-			button37.Image = (System.Drawing.Image)resources.GetObject("button37.Image");
-			button37.Location = new System.Drawing.Point(647, 9);
-			button37.Name = "button37";
-			button37.Size = new System.Drawing.Size(35, 35);
-			button37.TabIndex = 83;
-			button37.UseVisualStyleBackColor = false;
-			button37.Visible = false;
-			button37.Click += new System.EventHandler(button37_Click);
-			panel7.Controls.Add(label14);
-			panel7.Controls.Add(progressBar1);
-			panel7.Location = new System.Drawing.Point(25, 564);
-			panel7.Name = "panel7";
-			panel7.Size = new System.Drawing.Size(501, 19);
-			panel7.TabIndex = 84;
-			panel7.Visible = false;
-			label14.AutoSize = true;
-			label14.Location = new System.Drawing.Point(474, 4);
-			label14.Name = "label14";
-			label14.Size = new System.Drawing.Size(17, 12);
-			label14.TabIndex = 1;
-			label14.Text = "1%";
-			progressBar1.Location = new System.Drawing.Point(0, 0);
-			progressBar1.Name = "progressBar1";
-			progressBar1.Size = new System.Drawing.Size(473, 19);
-			progressBar1.TabIndex = 0;
-			timer_flash.Interval = 1000;
-			timer_flash.Tick += new System.EventHandler(timer_flash_Tick);
-			trackBar3.AutoSize = false;
-			trackBar3.Location = new System.Drawing.Point(924, 526);
-			trackBar3.Maximum = 3200;
-			trackBar3.Name = "trackBar3";
-			trackBar3.Size = new System.Drawing.Size(136, 31);
-			trackBar3.TabIndex = 36;
-			trackBar3.Value = 1650;
-			trackBar3.MouseUp += new System.Windows.Forms.MouseEventHandler(trackBar3_MouseUp);
-			AllowDrop = true;
-			base.AutoScaleDimensions = new System.Drawing.SizeF(6f, 12f);
-			base.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			BackColor = System.Drawing.Color.Gainsboro;
-			base.ClientSize = new System.Drawing.Size(769, 584);
-			base.Controls.Add(label12);
-			base.Controls.Add(panel7);
-			base.Controls.Add(button37);
-			base.Controls.Add(button34);
-			base.Controls.Add(button33);
-			base.Controls.Add(panel5);
-			base.Controls.Add(panel4);
-			base.Controls.Add(panel6);
-			base.Controls.Add(groupBox5);
-			base.Controls.Add(label13);
-			base.Controls.Add(label3);
-			base.Controls.Add(button36);
-			base.Controls.Add(button35);
-			base.Controls.Add(label1);
-			base.Controls.Add(button32);
-			base.Controls.Add(textBox4);
-			base.Controls.Add(trackBar3);
-			base.Controls.Add(label11);
-			base.Controls.Add(label10);
-			base.Controls.Add(label2);
-			base.Controls.Add(label9);
-			base.Controls.Add(label8);
-			base.Controls.Add(label7);
-			base.Controls.Add(button31);
-			base.Controls.Add(button10);
-			base.Controls.Add(button29);
-			base.Controls.Add(label6);
-			base.Controls.Add(button9);
-			base.Controls.Add(groupBox3);
-			base.Controls.Add(textBox2);
-			base.Controls.Add(groupBox1);
-			base.Controls.Add(checkBox2);
-			base.Controls.Add(button27);
-			base.Controls.Add(button16);
-			base.Controls.Add(label4);
-			base.Controls.Add(label5);
-			base.Controls.Add(button18);
-			base.Controls.Add(button19);
-			base.Controls.Add(button15);
-			base.Controls.Add(button25);
-			base.Controls.Add(button24);
-			base.Controls.Add(button23);
-			base.Controls.Add(button22);
-			base.Controls.Add(button21);
-			base.Controls.Add(button20);
-			base.Controls.Add(jdt);
-			base.Controls.Add(button17);
-			base.Controls.Add(panel2);
-			base.Controls.Add(checkBox1);
-			base.Controls.Add(button5);
-			base.Controls.Add(button4);
-			base.Controls.Add(button7);
-			base.Controls.Add(button8);
-			base.Controls.Add(button6);
-			base.Controls.Add(button3);
-			base.Controls.Add(button2);
-			base.Controls.Add(button1);
-			base.Controls.Add(panel1);
-			base.Controls.Add(groupBox4);
-			base.Controls.Add(groupBox2);
-			DoubleBuffered = true;
-			base.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-			base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
-			base.MaximizeBox = false;
-			base.Name = "Form1";
-			Text = "激光雕刻机";
-			base.FormClosed += new System.Windows.Forms.FormClosedEventHandler(Form1_FormClosed);
-			base.Load += new System.EventHandler(Form1_Load);
-			base.DragDrop += new System.Windows.Forms.DragEventHandler(Form1_DragDrop);
-			base.DragEnter += new System.Windows.Forms.DragEventHandler(Form1_DragEnter);
-			panel2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)trackBar2).EndInit();
-			((System.ComponentModel.ISupportInitialize)trackBar1).EndInit();
-			((System.ComponentModel.ISupportInitialize)trackBar4).EndInit();
-			groupBox1.ResumeLayout(false);
-			groupBox1.PerformLayout();
-			groupBox2.ResumeLayout(false);
-			groupBox2.PerformLayout();
-			groupBox3.ResumeLayout(false);
-			groupBox3.PerformLayout();
-			groupBox4.ResumeLayout(false);
-			groupBox4.PerformLayout();
-			panel6.ResumeLayout(false);
-			panel6.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)trackBar5).EndInit();
-			groupBox5.ResumeLayout(false);
-			groupBox5.PerformLayout();
-			panel7.ResumeLayout(false);
-			panel7.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)trackBar3).EndInit();
-			ResumeLayout(false);
-			PerformLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button19 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.com = new System.IO.Ports.SerialPort(this.components);
+            this.dakai = new System.Windows.Forms.OpenFileDialog();
+            this.da_kai_g = new System.Windows.Forms.OpenFileDialog();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button17 = new System.Windows.Forms.Button();
+            this.jdt = new System.Windows.Forms.ProgressBar();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button21 = new System.Windows.Forms.Button();
+            this.button22 = new System.Windows.Forms.Button();
+            this.button23 = new System.Windows.Forms.Button();
+            this.button24 = new System.Windows.Forms.Button();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button27 = new System.Windows.Forms.Button();
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.label2 = new System.Windows.Forms.Label();
+            this.hei_bai = new System.Windows.Forms.RadioButton();
+            this.li_san = new System.Windows.Forms.RadioButton();
+            this.hui_du = new System.Windows.Forms.RadioButton();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.trackBar4 = new System.Windows.Forms.TrackBar();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.button30 = new System.Windows.Forms.Button();
+            this.button28 = new System.Windows.Forms.Button();
+            this.button26 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button29 = new System.Windows.Forms.Button();
+            this.button31 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button32 = new System.Windows.Forms.Button();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.label12 = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button36 = new System.Windows.Forms.Button();
+            this.button35 = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.trackBar5 = new System.Windows.Forms.TrackBar();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.button33 = new System.Windows.Forms.Button();
+            this.button34 = new System.Windows.Forms.Button();
+            this.button37 = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer_flash = new System.Windows.Forms.Timer(this.components);
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.panel1.Location = new System.Drawing.Point(25, 65);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(247, 191);
+            this.panel1.TabIndex = 1;
+            this.panel1.TabStop = true;
+            this.panel1.LocationChanged += new System.EventHandler(this.panel1_LocationChanged);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.panel1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Transparent;
+            this.button10.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.button10.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button10.Location = new System.Drawing.Point(438, 203);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(17, 18);
+            this.button10.TabIndex = 2;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Visible = false;
+            this.button10.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button10_MouseDown);
+            this.button10.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button10_MouseMove);
+            this.button10.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button10_MouseUp);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Transparent;
+            this.button9.Cursor = System.Windows.Forms.Cursors.SizeNWSE;
+            this.button9.Location = new System.Drawing.Point(453, 220);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(17, 18);
+            this.button9.TabIndex = 1;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Visible = false;
+            this.button9.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button9_MouseDown);
+            this.button9.MouseMove += new System.Windows.Forms.MouseEventHandler(this.button9_MouseMove);
+            this.button9.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button9_MouseUp);
+            // 
+            // textBox2
+            // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.SizeAll;
+            this.textBox2.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.textBox2.Location = new System.Drawing.Point(278, 66);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(177, 155);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.Visible = false;
+            this.textBox2.LocationChanged += new System.EventHandler(this.textBox2_LocationChanged);
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseDown);
+            this.textBox2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseMove);
+            this.textBox2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.textBox2_MouseUp);
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(1001, 228);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(35, 38);
+            this.button18.TabIndex = 30;
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Visible = false;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button19
+            // 
+            this.button19.Location = new System.Drawing.Point(984, 229);
+            this.button19.Name = "button19";
+            this.button19.Size = new System.Drawing.Size(35, 38);
+            this.button19.TabIndex = 31;
+            this.button19.UseVisualStyleBackColor = true;
+            this.button19.Visible = false;
+            this.button19.Click += new System.EventHandler(this.button19_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.ForeColor = System.Drawing.Color.Blue;
+            this.button1.Location = new System.Drawing.Point(532, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 35);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "設備接続";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(949, 8);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(66, 17);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "250*250";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.Visible = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.Location = new System.Drawing.Point(532, 56);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(107, 36);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "絵図導入";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.ForeColor = System.Drawing.Color.Red;
+            this.button3.Location = new System.Drawing.Point(825, 8);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(94, 33);
+            this.button3.TabIndex = 4;
+            this.button3.Text = "模拟发送错误";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.Location = new System.Drawing.Point(917, 79);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(107, 33);
+            this.button6.TabIndex = 6;
+            this.button6.Text = "打开G代码";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Location = new System.Drawing.Point(994, 114);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(107, 33);
+            this.button7.TabIndex = 11;
+            this.button7.Text = "快进>>";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.Location = new System.Drawing.Point(917, 118);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(107, 33);
+            this.button8.TabIndex = 10;
+            this.button8.Text = "<<快退";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.Transparent;
+            this.button4.ForeColor = System.Drawing.Color.Red;
+            this.button4.Location = new System.Drawing.Point(532, 99);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(71, 39);
+            this.button4.TabIndex = 12;
+            this.button4.Text = "スタート";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button4_MouseDown);
+            this.button4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.button4_MouseUp);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.Location = new System.Drawing.Point(655, 56);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(107, 36);
+            this.button5.TabIndex = 13;
+            this.button5.Text = "文字編集";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // com
+            // 
+            this.com.ErrorReceived += new System.IO.Ports.SerialErrorReceivedEventHandler(this.com_ErrorReceived);
+            this.com.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.com_DataReceived);
+            // 
+            // dakai
+            // 
+            this.dakai.FileName = "openFileDialog1";
+            this.dakai.Filter = "ビットマップファイル|*.bmp;*.jpg;*.jpge;*.png;";
+            // 
+            // da_kai_g
+            // 
+            this.da_kai_g.FileName = "openFileDialog1";
+            this.da_kai_g.Filter = "刀路文件|*.NC|所有文件|*.*";
+            // 
+            // fontDialog1
+            // 
+            this.fontDialog1.Font = new System.Drawing.Font("SimSun", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(692, 15);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(32, 35);
+            this.panel2.TabIndex = 23;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(32, 35);
+            this.panel3.TabIndex = 44;
+            this.panel3.Visible = false;
+            // 
+            // button17
+            // 
+            this.button17.BackColor = System.Drawing.Color.Transparent;
+            this.button17.Location = new System.Drawing.Point(962, 419);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(215, 41);
+            this.button17.TabIndex = 28;
+            this.button17.Text = "发送脱机数据";
+            this.button17.UseVisualStyleBackColor = false;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // jdt
+            // 
+            this.jdt.Location = new System.Drawing.Point(963, 463);
+            this.jdt.Name = "jdt";
+            this.jdt.Size = new System.Drawing.Size(213, 11);
+            this.jdt.TabIndex = 29;
+            this.jdt.Visible = false;
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.Transparent;
+            this.button20.Image = ((System.Drawing.Image)(resources.GetObject("button20.Image")));
+            this.button20.Location = new System.Drawing.Point(178, 10);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(35, 38);
+            this.button20.TabIndex = 32;
+            this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button21
+            // 
+            this.button21.BackColor = System.Drawing.Color.Transparent;
+            this.button21.Image = ((System.Drawing.Image)(resources.GetObject("button21.Image")));
+            this.button21.Location = new System.Drawing.Point(25, 10);
+            this.button21.Name = "button21";
+            this.button21.Size = new System.Drawing.Size(35, 38);
+            this.button21.TabIndex = 33;
+            this.button21.UseVisualStyleBackColor = false;
+            this.button21.Click += new System.EventHandler(this.button21_Click);
+            // 
+            // button22
+            // 
+            this.button22.BackColor = System.Drawing.Color.Transparent;
+            this.button22.Image = ((System.Drawing.Image)(resources.GetObject("button22.Image")));
+            this.button22.Location = new System.Drawing.Point(76, 10);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(35, 38);
+            this.button22.TabIndex = 34;
+            this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.button22_Click);
+            // 
+            // button23
+            // 
+            this.button23.BackColor = System.Drawing.Color.Transparent;
+            this.button23.Image = ((System.Drawing.Image)(resources.GetObject("button23.Image")));
+            this.button23.Location = new System.Drawing.Point(928, 31);
+            this.button23.Name = "button23";
+            this.button23.Size = new System.Drawing.Size(35, 38);
+            this.button23.TabIndex = 35;
+            this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // button24
+            // 
+            this.button24.BackColor = System.Drawing.Color.Transparent;
+            this.button24.Location = new System.Drawing.Point(690, 99);
+            this.button24.Name = "button24";
+            this.button24.Size = new System.Drawing.Size(71, 39);
+            this.button24.TabIndex = 37;
+            this.button24.Text = "停止";
+            this.button24.UseVisualStyleBackColor = false;
+            this.button24.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.Transparent;
+            this.button25.Image = ((System.Drawing.Image)(resources.GetObject("button25.Image")));
+            this.button25.Location = new System.Drawing.Point(127, 10);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(35, 38);
+            this.button25.TabIndex = 31;
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click);
+            // 
+            // button15
+            // 
+            this.button15.BackColor = System.Drawing.Color.Transparent;
+            this.button15.Image = ((System.Drawing.Image)(resources.GetObject("button15.Image")));
+            this.button15.Location = new System.Drawing.Point(280, 10);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(35, 38);
+            this.button15.TabIndex = 31;
+            this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label3.Font = new System.Drawing.Font("SimSun", 13F);
+            this.label3.Location = new System.Drawing.Point(875, 579);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 18);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "缩放";
+            // 
+            // label5
+            // 
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label5.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.Blue;
+            this.label5.Location = new System.Drawing.Point(1013, 551);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(92, 33);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Y：";
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.Font = new System.Drawing.Font("SimSun", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.ForeColor = System.Drawing.Color.Blue;
+            this.label4.Location = new System.Drawing.Point(952, 519);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 33);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "X：";
+            // 
+            // button16
+            // 
+            this.button16.BackColor = System.Drawing.Color.Transparent;
+            this.button16.ForeColor = System.Drawing.Color.Red;
+            this.button16.Location = new System.Drawing.Point(928, 157);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(53, 33);
+            this.button16.TabIndex = 43;
+            this.button16.Text = "开始";
+            this.button16.UseVisualStyleBackColor = false;
+            this.button16.Visible = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click_1);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(954, 313);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 47;
+            this.label6.Text = "激光功率：";
+            // 
+            // button27
+            // 
+            this.button27.BackColor = System.Drawing.Color.Transparent;
+            this.button27.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button27.Image = ((System.Drawing.Image)(resources.GetObject("button27.Image")));
+            this.button27.Location = new System.Drawing.Point(229, 10);
+            this.button27.Name = "button27";
+            this.button27.Size = new System.Drawing.Size(35, 38);
+            this.button27.TabIndex = 52;
+            this.button27.UseVisualStyleBackColor = false;
+            this.button27.Click += new System.EventHandler(this.button27_Click);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(3, 22);
+            this.trackBar2.Maximum = 253;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Size = new System.Drawing.Size(194, 45);
+            this.trackBar2.TabIndex = 16;
+            this.trackBar2.Value = 128;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            this.trackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar2_MouseUp);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(869, 264);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "絵図調整：";
+            this.label2.Visible = false;
+            // 
+            // hei_bai
+            // 
+            this.hei_bai.AutoSize = true;
+            this.hei_bai.Checked = true;
+            this.hei_bai.Location = new System.Drawing.Point(6, 26);
+            this.hei_bai.Name = "hei_bai";
+            this.hei_bai.Size = new System.Drawing.Size(49, 17);
+            this.hei_bai.TabIndex = 49;
+            this.hei_bai.TabStop = true;
+            this.hei_bai.Text = "黒白";
+            this.hei_bai.UseVisualStyleBackColor = true;
+            this.hei_bai.CheckedChanged += new System.EventHandler(this.hei_bai_CheckedChanged);
+            // 
+            // li_san
+            // 
+            this.li_san.AutoSize = true;
+            this.li_san.Location = new System.Drawing.Point(6, 47);
+            this.li_san.Name = "li_san";
+            this.li_san.Size = new System.Drawing.Size(49, 17);
+            this.li_san.TabIndex = 50;
+            this.li_san.Text = "离散";
+            this.li_san.UseVisualStyleBackColor = true;
+            this.li_san.CheckedChanged += new System.EventHandler(this.li_san_CheckedChanged);
+            this.li_san.MouseDown += new System.Windows.Forms.MouseEventHandler(this.li_san_MouseDown);
+            // 
+            // hui_du
+            // 
+            this.hui_du.AutoSize = true;
+            this.hui_du.Location = new System.Drawing.Point(129, 26);
+            this.hui_du.Name = "hui_du";
+            this.hui_du.Size = new System.Drawing.Size(91, 17);
+            this.hui_du.TabIndex = 51;
+            this.hui_du.Text = "グレースケール";
+            this.hui_du.UseVisualStyleBackColor = true;
+            this.hui_du.Visible = false;
+            this.hui_du.CheckedChanged += new System.EventHandler(this.hui_du_CheckedChanged);
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Location = new System.Drawing.Point(195, 25);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(33, 13);
+            this.textBox3.TabIndex = 18;
+            this.textBox3.Text = "128";
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(3, 22);
+            this.trackBar1.Maximum = 255;
+            this.trackBar1.Minimum = 1;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(191, 45);
+            this.trackBar1.TabIndex = 8;
+            this.trackBar1.Value = 10;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(869, 402);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "彫刻の深さ調整：";
+            this.label1.Visible = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(195, 25);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(33, 13);
+            this.textBox1.TabIndex = 14;
+            this.textBox1.Text = "10";
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // trackBar4
+            // 
+            this.trackBar4.Location = new System.Drawing.Point(2, 16);
+            this.trackBar4.Maximum = 100;
+            this.trackBar4.Name = "trackBar4";
+            this.trackBar4.Size = new System.Drawing.Size(195, 45);
+            this.trackBar4.TabIndex = 46;
+            this.trackBar4.Value = 100;
+            this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
+            this.trackBar4.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar4_MouseUp);
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox5.Location = new System.Drawing.Point(191, 16);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(35, 13);
+            this.textBox5.TabIndex = 48;
+            this.textBox5.Text = "100";
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(866, 438);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(62, 17);
+            this.checkBox2.TabIndex = 15;
+            this.checkBox2.Text = "框定位";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.Visible = false;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Transparent;
+            this.button11.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button11.Location = new System.Drawing.Point(82, 67);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(67, 38);
+            this.button11.TabIndex = 19;
+            this.button11.Text = "↑";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.Transparent;
+            this.button12.Location = new System.Drawing.Point(82, 153);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(67, 38);
+            this.button12.TabIndex = 20;
+            this.button12.Text = "↓";
+            this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button13
+            // 
+            this.button13.BackColor = System.Drawing.Color.Transparent;
+            this.button13.Location = new System.Drawing.Point(9, 109);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(67, 38);
+            this.button13.TabIndex = 21;
+            this.button13.Text = "←";
+            this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button14
+            // 
+            this.button14.BackColor = System.Drawing.Color.Transparent;
+            this.button14.Location = new System.Drawing.Point(155, 109);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(67, 38);
+            this.button14.TabIndex = 22;
+            this.button14.Text = "→";
+            this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.hui_du);
+            this.groupBox1.Controls.Add(this.li_san);
+            this.groupBox1.Controls.Add(this.hei_bai);
+            this.groupBox1.Location = new System.Drawing.Point(532, 142);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(231, 70);
+            this.groupBox1.TabIndex = 53;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "彫刻スタイル選択";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.trackBar1);
+            this.groupBox2.Location = new System.Drawing.Point(532, 326);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(230, 54);
+            this.groupBox2.TabIndex = 54;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "レーザー彫刻パラメータ調整";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.textBox8);
+            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.label21);
+            this.groupBox3.Controls.Add(this.label20);
+            this.groupBox3.Controls.Add(this.label19);
+            this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.button30);
+            this.groupBox3.Controls.Add(this.button28);
+            this.groupBox3.Controls.Add(this.button26);
+            this.groupBox3.Controls.Add(this.button14);
+            this.groupBox3.Controls.Add(this.button13);
+            this.groupBox3.Controls.Add(this.button12);
+            this.groupBox3.Controls.Add(this.button11);
+            this.groupBox3.Location = new System.Drawing.Point(534, 387);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(229, 221);
+            this.groupBox3.TabIndex = 55;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "レーザー位置調整";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(156, 193);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(46, 20);
+            this.textBox8.TabIndex = 30;
+            this.textBox8.Text = "10";
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(41, 193);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(46, 20);
+            this.textBox7.TabIndex = 29;
+            this.textBox7.Text = "10";
+            this.textBox7.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(206, 198);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(25, 13);
+            this.label21.TabIndex = 38;
+            this.label21.Text = "MM";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(91, 198);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(25, 13);
+            this.label20.TabIndex = 37;
+            this.label20.Text = "MM";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(119, 196);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.TabIndex = 36;
+            this.label19.Text = "高度：";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(6, 196);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "宽度：";
+            // 
+            // button30
+            // 
+            this.button30.BackColor = System.Drawing.Color.Transparent;
+            this.button30.Location = new System.Drawing.Point(82, 109);
+            this.button30.Name = "button30";
+            this.button30.Size = new System.Drawing.Size(67, 37);
+            this.button30.TabIndex = 28;
+            this.button30.Text = "中心に戻る";
+            this.button30.UseVisualStyleBackColor = false;
+            this.button30.Click += new System.EventHandler(this.button30_Click);
+            // 
+            // button28
+            // 
+            this.button28.BackColor = System.Drawing.Color.Transparent;
+            this.button28.Location = new System.Drawing.Point(37, 22);
+            this.button28.Name = "button28";
+            this.button28.Size = new System.Drawing.Size(75, 39);
+            this.button28.TabIndex = 26;
+            this.button28.Text = "彫刻範囲プレビュー";
+            this.button28.UseVisualStyleBackColor = false;
+            this.button28.Click += new System.EventHandler(this.button28_Click);
+            // 
+            // button26
+            // 
+            this.button26.BackColor = System.Drawing.Color.Transparent;
+            this.button26.Location = new System.Drawing.Point(117, 22);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(75, 39);
+            this.button26.TabIndex = 25;
+            this.button26.Text = "原点に戻る";
+            this.button26.UseVisualStyleBackColor = false;
+            this.button26.Click += new System.EventHandler(this.button26_Click_1);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label13.Font = new System.Drawing.Font("SimSun", 13F);
+            this.label13.Location = new System.Drawing.Point(1034, 583);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 18);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "缩放";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // textBox4
+            // 
+            this.textBox4.CausesValidation = false;
+            this.textBox4.Location = new System.Drawing.Point(866, 345);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(53, 20);
+            this.textBox4.TabIndex = 24;
+            this.textBox4.Text = "20";
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(851, 455);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "步进值：";
+            this.label7.Visible = false;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 300;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button29
+            // 
+            this.button29.BackColor = System.Drawing.Color.Transparent;
+            this.button29.ForeColor = System.Drawing.Color.Blue;
+            this.button29.Location = new System.Drawing.Point(611, 99);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(71, 39);
+            this.button29.TabIndex = 56;
+            this.button29.Text = "一時停止";
+            this.button29.UseVisualStyleBackColor = false;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            this.button29.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button29_MouseDown);
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(871, 301);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(55, 21);
+            this.button31.TabIndex = 57;
+            this.button31.Text = "button31";
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Visible = false;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(25, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(500, 1);
+            this.label8.TabIndex = 58;
+            this.label8.Text = "label8";
+            // 
+            // label9
+            // 
+            this.label9.BackColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(25, 607);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(500, 1);
+            this.label9.TabIndex = 59;
+            this.label9.Text = "label9";
+            // 
+            // label10
+            // 
+            this.label10.BackColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(25, 65);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(1, 542);
+            this.label10.TabIndex = 60;
+            this.label10.Text = "label10";
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(525, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(1, 542);
+            this.label11.TabIndex = 61;
+            this.label11.Text = "label11";
+            // 
+            // button32
+            // 
+            this.button32.BackColor = System.Drawing.Color.Transparent;
+            this.button32.Font = new System.Drawing.Font("SimSun", 20F);
+            this.button32.Image = ((System.Drawing.Image)(resources.GetObject("button32.Image")));
+            this.button32.Location = new System.Drawing.Point(331, 10);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(35, 38);
+            this.button32.TabIndex = 62;
+            this.button32.UseVisualStyleBackColor = false;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Location = new System.Drawing.Point(32, 588);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(0, 13);
+            this.label12.TabIndex = 63;
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.trackBar4);
+            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Location = new System.Drawing.Point(532, 272);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(231, 54);
+            this.groupBox4.TabIndex = 64;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "レーザー彫刻パラメータ調整";
+            // 
+            // button36
+            // 
+            this.button36.BackColor = System.Drawing.Color.Transparent;
+            this.button36.Font = new System.Drawing.Font("SimSun", 20F);
+            this.button36.Image = ((System.Drawing.Image)(resources.GetObject("button36.Image")));
+            this.button36.Location = new System.Drawing.Point(484, 10);
+            this.button36.Name = "button36";
+            this.button36.Size = new System.Drawing.Size(35, 38);
+            this.button36.TabIndex = 76;
+            this.button36.UseVisualStyleBackColor = false;
+            this.button36.Click += new System.EventHandler(this.button36_Click);
+            // 
+            // button35
+            // 
+            this.button35.BackColor = System.Drawing.Color.Transparent;
+            this.button35.Font = new System.Drawing.Font("SimSun", 20F);
+            this.button35.Image = ((System.Drawing.Image)(resources.GetObject("button35.Image")));
+            this.button35.Location = new System.Drawing.Point(382, 10);
+            this.button35.Name = "button35";
+            this.button35.Size = new System.Drawing.Size(35, 38);
+            this.button35.TabIndex = 75;
+            this.button35.UseVisualStyleBackColor = false;
+            this.button35.Click += new System.EventHandler(this.button35_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label17);
+            this.panel6.Controls.Add(this.label16);
+            this.panel6.Controls.Add(this.radioButton4);
+            this.panel6.Controls.Add(this.radioButton3);
+            this.panel6.Controls.Add(this.radioButton2);
+            this.panel6.Controls.Add(this.radioButton5);
+            this.panel6.Controls.Add(this.listBox1);
+            this.panel6.Controls.Add(this.trackBar5);
+            this.panel6.Location = new System.Drawing.Point(127, 294);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(303, 314);
+            this.panel6.TabIndex = 77;
+            this.panel6.Visible = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(14, 38);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(19, 13);
+            this.label17.TabIndex = 13;
+            this.label17.Text = "16";
+            // 
+            // label16
+            // 
+            this.label16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.label16.Location = new System.Drawing.Point(0, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(303, 26);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "字体选择";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label16_MouseDown);
+            this.label16.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label16_MouseMove);
+            this.label16.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label16_MouseUp);
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(198, 274);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(73, 17);
+            this.radioButton4.TabIndex = 11;
+            this.radioButton4.Text = "粗体斜体";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(198, 208);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(49, 17);
+            this.radioButton3.TabIndex = 10;
+            this.radioButton3.Text = "斜体";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(198, 142);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(49, 17);
+            this.radioButton2.TabIndex = 9;
+            this.radioButton2.Text = "粗体";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Checked = true;
+            this.radioButton5.Location = new System.Drawing.Point(198, 76);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(49, 17);
+            this.radioButton5.TabIndex = 8;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "常规";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(20, 74);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(172, 225);
+            this.listBox1.TabIndex = 7;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // trackBar5
+            // 
+            this.trackBar5.Location = new System.Drawing.Point(38, 31);
+            this.trackBar5.Maximum = 100;
+            this.trackBar5.Minimum = 1;
+            this.trackBar5.Name = "trackBar5";
+            this.trackBar5.Size = new System.Drawing.Size(244, 45);
+            this.trackBar5.TabIndex = 6;
+            this.trackBar5.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar5.Value = 16;
+            this.trackBar5.Scroll += new System.EventHandler(this.trackBar5_Scroll);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.textBox3);
+            this.groupBox5.Controls.Add(this.trackBar2);
+            this.groupBox5.Location = new System.Drawing.Point(532, 207);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(231, 62);
+            this.groupBox5.TabIndex = 78;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "groupBox5";
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.IsBalloon = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Location = new System.Drawing.Point(29, 47);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(76, 18);
+            this.panel4.TabIndex = 79;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(8, 220);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(17, 83);
+            this.panel5.TabIndex = 80;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            // 
+            // button33
+            // 
+            this.button33.BackColor = System.Drawing.Color.Transparent;
+            this.button33.Font = new System.Drawing.Font("SimSun", 20F);
+            this.button33.Image = ((System.Drawing.Image)(resources.GetObject("button33.Image")));
+            this.button33.Location = new System.Drawing.Point(433, 10);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(35, 38);
+            this.button33.TabIndex = 81;
+            this.button33.UseVisualStyleBackColor = false;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
+            // button34
+            // 
+            this.button34.BackColor = System.Drawing.Color.Transparent;
+            this.button34.ForeColor = System.Drawing.Color.Red;
+            this.button34.Location = new System.Drawing.Point(825, 47);
+            this.button34.Name = "button34";
+            this.button34.Size = new System.Drawing.Size(94, 33);
+            this.button34.TabIndex = 82;
+            this.button34.Text = "模拟接收错误";
+            this.button34.UseVisualStyleBackColor = false;
+            this.button34.Click += new System.EventHandler(this.button34_Click);
+            // 
+            // button37
+            // 
+            this.button37.BackColor = System.Drawing.Color.Transparent;
+            this.button37.Font = new System.Drawing.Font("SimSun", 20F);
+            this.button37.Image = ((System.Drawing.Image)(resources.GetObject("button37.Image")));
+            this.button37.Location = new System.Drawing.Point(647, 10);
+            this.button37.Name = "button37";
+            this.button37.Size = new System.Drawing.Size(35, 38);
+            this.button37.TabIndex = 83;
+            this.button37.UseVisualStyleBackColor = false;
+            this.button37.Visible = false;
+            this.button37.Click += new System.EventHandler(this.button37_Click);
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.label14);
+            this.panel7.Controls.Add(this.progressBar1);
+            this.panel7.Location = new System.Drawing.Point(25, 611);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(501, 21);
+            this.panel7.TabIndex = 84;
+            this.panel7.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(474, 4);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(21, 13);
+            this.label14.TabIndex = 1;
+            this.label14.Text = "1%";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(0, 0);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(473, 21);
+            this.progressBar1.TabIndex = 0;
+            // 
+            // timer_flash
+            // 
+            this.timer_flash.Interval = 1000;
+            this.timer_flash.Tick += new System.EventHandler(this.timer_flash_Tick);
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.AutoSize = false;
+            this.trackBar3.Location = new System.Drawing.Point(924, 570);
+            this.trackBar3.Maximum = 3200;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(136, 34);
+            this.trackBar3.TabIndex = 36;
+            this.trackBar3.Value = 1650;
+            this.trackBar3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar3_MouseUp);
+            // 
+            // Form1
+            // 
+            this.AllowDrop = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.ClientSize = new System.Drawing.Size(769, 633);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.panel7);
+            this.Controls.Add(this.button37);
+            this.Controls.Add(this.button34);
+            this.Controls.Add(this.button33);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel6);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button36);
+            this.Controls.Add(this.button35);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button32);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.trackBar3);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.button31);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.button29);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.button27);
+            this.Controls.Add(this.button16);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button18);
+            this.Controls.Add(this.button19);
+            this.Controls.Add(this.button15);
+            this.Controls.Add(this.button25);
+            this.Controls.Add(this.button24);
+            this.Controls.Add(this.button23);
+            this.Controls.Add(this.button22);
+            this.Controls.Add(this.button21);
+            this.Controls.Add(this.button20);
+            this.Controls.Add(this.jdt);
+            this.Controls.Add(this.button17);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox2);
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "Form1";
+            this.Text = "激光雕刻机";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar5)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 	}
 }
