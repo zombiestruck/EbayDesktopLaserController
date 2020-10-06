@@ -24,7 +24,7 @@ namespace 微型雕刻机2
 			Continus = 0x80000000
 		}
 
-		private diao_ke_ji diao;
+		private engraving_machine engraver;
 
 		public int dx;
 
@@ -571,7 +571,7 @@ namespace 微型雕刻机2
 			while (0 < num--)
 			{
 				Thread.Sleep(10);
-				diao_ke_ji.处理事件();
+				engraving_machine.处理事件();
 				if (!banben)
 				{
 					Thread.Sleep(100);
@@ -602,14 +602,14 @@ namespace 微型雕刻机2
 		{
 			if (button1.Text == str2)
 			{
-				if (diao.lian_jie())
+				if (engraver.lian_jie())
 				{
 					timer2.Enabled = true;
 					panel3.Visible = true;
 					button1.Text = str3;
 					panel2.Refresh();
-					diao.x = 0;
-					diao.y = 0;
+					engraver.x = 0;
+					engraver.y = 0;
 					dx = 0;
 					dy = 0;
 					x = 0;
@@ -628,12 +628,12 @@ namespace 微型雕刻机2
 			{
 				if (checkBox2.Checked)
 				{
-					diao.guan_kuang();
+					engraver.guan_kuang();
 				}
 				_ = kai_shi;
 				timer2.Enabled = false;
 				com.Close();
-				diao.lianjie = false;
+				engraver.lianjie = false;
 				panel3.Visible = false;
 				button1.Text = str2;
 				panel2.Refresh();
@@ -658,7 +658,7 @@ namespace 微型雕刻机2
 				}
 				num3 = (double)bb2.Width * 1.0 / (double)num2;
 				num = (int)((double)bb2.Height / num3);
-				diao.tu = tu_xiang.suofang(bb2, num2, num);
+				engraver.tu = tu_xiang.suofang(bb2, num2, num);
 			}
 			else
 			{
@@ -673,7 +673,7 @@ namespace 微型雕刻机2
 				}
 				num3 = (double)bb2.Height * 1.0 / (double)num;
 				num2 = (int)((double)bb2.Width / num3);
-				diao.tu = tu_xiang.suofang(bb2, num2, num);
+				engraver.tu = tu_xiang.suofang(bb2, num2, num);
 			}
 		}
 
@@ -701,30 +701,30 @@ namespace 微型雕刻机2
 				_ = bj2[3];
 				_ = bj2[2];
 				double num3 = (double)num / (double)num2;
-				diao.tu = tu_xiang.suofang(bb2, (int)((double)bb2.Width * num3), (int)((double)bb2.Height * num3));
+				engraver.tu = tu_xiang.suofang(bb2, (int)((double)bb2.Width * num3), (int)((double)bb2.Height * num3));
 			}
 			if (hei_bai.Checked)
 			{
-				diao.tu_pian = diao.hei_bai(contrast.Value);
+				engraver.tu_pian = engraver.hei_bai(contrast.Value);
 				if (fan_se)
 				{
-					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
+					engraver.tu_pian = tu_xiang.fanse(engraver.tu_pian);
 				}
 			}
 			else if (li_san.Checked)
 			{
-				diao.tu_pian = diao.dou_dong(contrast.Value);
+				engraver.tu_pian = engraver.dou_dong(contrast.Value);
 				if (fan_se)
 				{
-					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
+					engraver.tu_pian = tu_xiang.fanse(engraver.tu_pian);
 				}
 			}
 			else
 			{
-				diao.tu_pian = diao.hui_du(contrast.Value);
+				engraver.tu_pian = engraver.hui_du(contrast.Value);
 				if (fan_se)
 				{
-					diao.tu_pian = tu_xiang.fanse_huidu(diao.tu_pian);
+					engraver.tu_pian = tu_xiang.fanse_huidu(engraver.tu_pian);
 				}
 			}
 		}
@@ -737,36 +737,36 @@ namespace 微型雕刻机2
 			Bitmap bitmap = new Bitmap(wen_jian_ming);
 			tu = new Bitmap(bitmap);
 			bitmap.Dispose();
-			diao.tu = tu;
+			engraver.tu = tu;
 			contrast.Value = 128;
 			trackBar3.Value = trackBar3.Maximum / 2 + 10;
 			if (hei_bai.Checked)
 			{
-				diao.tu_pian = diao.hei_bai(contrast.Value);
+				engraver.tu_pian = engraver.hei_bai(contrast.Value);
 				if (fan_se)
 				{
-					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
+					engraver.tu_pian = tu_xiang.fanse(engraver.tu_pian);
 				}
 			}
 			else if (li_san.Checked)
 			{
-				diao.tu_pian = diao.dou_dong(contrast.Value);
+				engraver.tu_pian = engraver.dou_dong(contrast.Value);
 				if (fan_se)
 				{
-					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
+					engraver.tu_pian = tu_xiang.fanse(engraver.tu_pian);
 				}
 			}
 			else
 			{
-				diao.tu_pian = diao.hui_du(contrast.Value);
+				engraver.tu_pian = engraver.hui_du(contrast.Value);
 			}
-			bj2 = tu_xiang.qu_bian_jie2(diao.tu_pian);
+			bj2 = tu_xiang.qu_bian_jie2(engraver.tu_pian);
 			bj[0] = bj2[0];
 			bj[1] = bj2[1];
 			bj[2] = bj2[2];
 			bj[3] = bj2[3];
-			bai_bian_k = (double)(bj[1] - bj[0]) / (double)diao.tu_pian.Width;
-			bai_bian_g = (double)(bj[3] - bj[2]) / (double)diao.tu_pian.Height;
+			bai_bian_k = (double)(bj[1] - bj[0]) / (double)engraver.tu_pian.Width;
+			bai_bian_g = (double)(bj[3] - bj[2]) / (double)engraver.tu_pian.Height;
 			if (tu.Width > 1600 || tu.Height > 1520)
 			{
 				if (tu.Width - 1600 > tu.Height - 1520)
@@ -782,35 +782,35 @@ namespace 微型雕刻机2
 					tu = tu_xiang.suofang(tu, num2, 1520);
 				}
 			}
-			diao.tu = tu;
+			engraver.tu = tu;
 			contrast.Value = 128;
 			trackBar3.Value = trackBar3.Maximum / 2 + 10;
 			if (hei_bai.Checked)
 			{
-				diao.tu_pian = diao.hei_bai(contrast.Value);
+				engraver.tu_pian = engraver.hei_bai(contrast.Value);
 				if (fan_se)
 				{
-					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
+					engraver.tu_pian = tu_xiang.fanse(engraver.tu_pian);
 				}
 			}
 			else if (li_san.Checked)
 			{
-				diao.tu_pian = diao.dou_dong(contrast.Value);
+				engraver.tu_pian = engraver.dou_dong(contrast.Value);
 				if (fan_se)
 				{
-					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
+					engraver.tu_pian = tu_xiang.fanse(engraver.tu_pian);
 				}
 			}
 			else
 			{
-				diao.tu_pian = diao.hui_du(contrast.Value);
+				engraver.tu_pian = engraver.hui_du(contrast.Value);
 			}
-			bj2 = tu_xiang.qu_bian_jie2(diao.tu_pian);
+			bj2 = tu_xiang.qu_bian_jie2(engraver.tu_pian);
 			bj[0] = bj2[0];
 			bj[1] = bj2[1];
 			bj[2] = bj2[2];
 			bj[3] = bj2[3];
-			panel1.Location = new Point(25 + (int)(500.0 - (double)diao.tu_pian.Width * 0.3125) / 2, 60 + (int)(500.0 - (double)diao.tu_pian.Height * 0.3125) / 2);
+			panel1.Location = new Point(25 + (int)(500.0 - (double)engraver.tu_pian.Width * 0.3125) / 2, 60 + (int)(500.0 - (double)engraver.tu_pian.Height * 0.3125) / 2);
 			diyi = true;
 			kg_bi = (double)(bj[1] - bj[0]) / (double)(bj[3] - bj[2]);
 			if (mm_in)
@@ -922,18 +922,18 @@ namespace 微型雕刻机2
 				}
 				gai_bian = false;
 			}
-			bj = tu_xiang.qu_bian_jie2(diao.tu_pian);
-			if (diao.tu_pian != null)
+			bj = tu_xiang.qu_bian_jie2(engraver.tu_pian);
+			if (engraver.tu_pian != null)
 			{
 				if (checkBox2.Checked)
 				{
-					Bitmap bitmap = new Bitmap(diao.tu_pian);
+					Bitmap bitmap = new Bitmap(engraver.tu_pian);
 					Graphics graphics2 = Graphics.FromImage(bitmap);
 					Pen pen = new Pen(Color.Red, 3f);
 					graphics2.DrawRectangle(pen, bj[0] - 2, bj[2] - 2, bj[1] - bj[0] + 4, bj[3] - bj[2] + 4);
 					graphics2.Dispose();
 					tu_kuan_gao tu_kuan_gao = tu_xiang.shua_xin(panel1, bitmap, 0, 0, bitmap.Width, bitmap.Height, hui_du.Checked);
-					diao.tu_pian = tu_kuan_gao.bb;
+					engraver.tu_pian = tu_kuan_gao.bb;
 					hua_kg = new int[2]
 					{
 						tu_kuan_gao.k,
@@ -942,12 +942,12 @@ namespace 微型雕刻机2
 				}
 				else
 				{
-					Graphics graphics3 = Graphics.FromImage(new Bitmap(diao.tu_pian));
+					Graphics graphics3 = Graphics.FromImage(new Bitmap(engraver.tu_pian));
 					Pen pen2 = new Pen(Color.White, 3f);
 					graphics3.DrawRectangle(pen2, bj[0] - 2, bj[2] - 2, bj[1] - bj[0] + 4, bj[3] - bj[2] + 4);
 					graphics3.Dispose();
-					tu_kuan_gao tu_kuan_gao2 = tu_xiang.shua_xin(panel1, diao.tu_pian, 0, 0, diao.tu_pian.Width, diao.tu_pian.Height, hui_du.Checked);
-					diao.tu_pian = tu_kuan_gao2.bb;
+					tu_kuan_gao tu_kuan_gao2 = tu_xiang.shua_xin(panel1, engraver.tu_pian, 0, 0, engraver.tu_pian.Width, engraver.tu_pian.Height, hui_du.Checked);
+					engraver.tu_pian = tu_kuan_gao2.bb;
 					hua_kg = new int[2]
 					{
 						tu_kuan_gao2.k,
@@ -1024,12 +1024,12 @@ namespace 微型雕刻机2
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			diao = new diao_ke_ji(com);
+			engraver = new engraving_machine(com);
 			panel1.Width = 20;
 			panel1.Height = 20;
-			diao.lian_jie();
+			engraver.lian_jie();
 			com.Close();
-			diao.lianjie = false;
+			engraver.lianjie = false;
 			panel3.Visible = false;
 			button1.Text = str2;
 			yu_yan();
@@ -1055,7 +1055,7 @@ namespace 微型雕刻机2
 
 		private void huaxian(Point[] zhixian)
 		{
-			Graphics graphics = Graphics.FromImage(diao.tu_pian);
+			Graphics graphics = Graphics.FromImage(engraver.tu_pian);
 			Point point = default(Point);
 			bool flag = false;
 			for (int i = 0; i < zhixian.Length; i++)
@@ -1082,22 +1082,22 @@ namespace 微型雕刻机2
 			}
 		}
 
-		private void diaokexian(Point[] zhixian)
+		private void engraverkexian(Point[] zhixian)
 		{
-			Graphics graphics = Graphics.FromImage(diao.tu_pian);
+			Graphics graphics = Graphics.FromImage(engraver.tu_pian);
 			Point point = default(Point);
-			diao.guan_ruo_guang();
+			engraver.guan_ruo_guang();
 			bool flag = hua2;
 			if (flag)
 			{
 				point = new Point(zhixian[wei_zhi].X + dx, zhixian[wei_zhi].Y + dy);
-				diao.gai_bian_F(0);
-				diao.kai_deng();
-				diao.gai_bian_F(laserDepth.Value);
+				engraver.gai_bian_F(0);
+				engraver.kai_deng();
+				engraver.gai_bian_F(laserDepth.Value);
 			}
 			else
 			{
-				diao.gai_bian_F(0);
+				engraver.gai_bian_F(0);
 			}
 			for (int i = wei_zhi; i < zhixian.Length; i++)
 			{
@@ -1106,14 +1106,14 @@ namespace 微型雕刻机2
 					if (zhixian[i].X == 600)
 					{
 						flag = true;
-						diao.kai_deng();
-						diao.gai_bian_F(laserDepth.Value);
+						engraver.kai_deng();
+						engraver.gai_bian_F(laserDepth.Value);
 					}
 					if (zhixian[i].X == 601)
 					{
 						flag = false;
-						diao.guan_deng();
-						diao.gai_bian_F(0);
+						engraver.guan_deng();
+						engraver.gai_bian_F(0);
 					}
 				}
 				else
@@ -1139,7 +1139,7 @@ namespace 微型雕刻机2
 		{
 			if (!textBox2.Visible && da_kai_g.ShowDialog() == DialogResult.OK)
 			{
-				Graphics graphics = Graphics.FromImage(diao.tu_pian);
+				Graphics graphics = Graphics.FromImage(engraver.tu_pian);
 				graphics.Clear(Color.White);
 				graphics.Dispose();
 				zhuang_tai = 2;
@@ -1154,7 +1154,7 @@ namespace 微型雕刻机2
 			}
 		}
 
-		public bool diaoke2()
+		public bool engraverke2()
 		{
 			int num = 0;
 			int num2 = 0;
@@ -1162,17 +1162,17 @@ namespace 微型雕刻机2
 			byte b = 0;
 			if (li_san.Checked)
 			{
-				diao.li_san_mo_shi();
+				engraver.li_san_mo_shi();
 			}
 			else
 			{
-				diao.fei_li_san_mo_shi();
+				engraver.fei_li_san_mo_shi();
 			}
-			diao.fu_wei();
-			diao.kai_feng();
+			engraver.fu_wei();
+			engraver.kai_feng();
 			fen = true;
-			diao.kai_shi((int)((double)(panel1.Location.X - 25) * 3.2), (int)((double)(panel1.Location.Y - 60) * 3.2));
-			byte[] array = (diao.tu_pian.Width % 8 <= 0) ? new byte[diao.tu_pian.Width / 8 + 9] : new byte[diao.tu_pian.Width / 8 + 10];
+			engraver.kai_shi((int)((double)(panel1.Location.X - 25) * 3.2), (int)((double)(panel1.Location.Y - 60) * 3.2));
+			byte[] array = (engraver.tu_pian.Width % 8 <= 0) ? new byte[engraver.tu_pian.Width / 8 + 9] : new byte[engraver.tu_pian.Width / 8 + 10];
 			byte[] array2 = new byte[8]
 			{
 				128,
@@ -1184,12 +1184,12 @@ namespace 微型雕刻机2
 				2,
 				1
 			};
-			hei_dian_shu = diao.qu_hei_dian();
+			hei_dian_shu = engraver.qu_hei_dian();
 			timer3.Enabled = true;
 			miao = 0;
 			label12.Visible = true;
 			com.DiscardInBuffer();
-			for (num = wei_zhi; num < diao.tu_pian.Height; num++)
+			for (num = wei_zhi; num < engraver.tu_pian.Height; num++)
 			{
 				num3 = 0;
 				for (num2 = 0; num2 < array.Length - 9; num2++)
@@ -1198,10 +1198,10 @@ namespace 微型雕刻机2
 					b = 0;
 					for (num4 = 0; num4 < 8; num4++)
 					{
-						if (num2 * 8 + num4 < diao.tu_pian.Width && diao.tu_pian.GetPixel(num2 * 8 + num4, num).R == 0)
+						if (num2 * 8 + num4 < engraver.tu_pian.Width && engraver.tu_pian.GetPixel(num2 * 8 + num4, num).R == 0)
 						{
 							b = (byte)(b | array2[num4]);
-							diao.tu_pian.SetPixel(num2 * 8 + num4, num, Color.Red);
+							engraver.tu_pian.SetPixel(num2 * 8 + num4, num, Color.Red);
 						}
 					}
 					array[num3 + 9] = b;
@@ -1216,7 +1216,7 @@ namespace 微型雕刻机2
 				array[6] = (byte)(laserStrength.Value * 10);
 				array[7] = (byte)(num >> 8);
 				array[8] = (byte)num;
-				diao.fanhui = false;
+				engraver.fanhui = false;
 				bool flag = false;
 				for (int i = 9; i < array.Length; i++)
 				{
@@ -1264,14 +1264,14 @@ namespace 微型雕刻机2
 								}
 							}
 							Thread.Sleep(100);
-							diao_ke_ji.处理事件();
+							engraving_machine.处理事件();
 						}
 						while (!flag2);
 						com.Open();
 						goto IL_028b;
 					}
 					int num5 = 0;
-					while (!diao.fanhui)
+					while (!engraver.fanhui)
 					{
 						if (!com.IsOpen)
 						{
@@ -1280,7 +1280,7 @@ namespace 微型雕刻机2
 						num5++;
 						if (ting_zhi)
 						{
-							diao.ting_zhi();
+							engraver.ting_zhi();
 							kai_shi = false;
 							gai_bian = true;
 							timer3.Enabled = false;
@@ -1292,11 +1292,11 @@ namespace 微型雕刻机2
 						{
 							if (fen)
 							{
-								diao.kai_feng2();
+								engraver.kai_feng2();
 							}
 							else
 							{
-								diao.guan_feng2();
+								engraver.guan_feng2();
 							}
 							feng_shang = false;
 						}
@@ -1304,25 +1304,25 @@ namespace 微型雕刻机2
 						{
 							if (zan_ting2)
 							{
-								diao.zan_ting();
+								engraver.zan_ting();
 								timer3.Enabled = false;
 							}
 							else
 							{
-								diao.ji_xu();
+								engraver.ji_xu();
 								timer3.Enabled = true;
 							}
 							zan_ting = false;
 						}
-						diao_ke_ji.处理事件();
+						engraving_machine.处理事件();
 						Thread.Sleep(10);
 					}
 					gai_bian = true;
 					shu_xin();
-					diao_ke_ji.处理事件();
+					engraving_machine.处理事件();
 					Thread.Sleep(10);
 				}
-				while (diao.fanhui_shu == 8);
+				while (engraver.fanhui_shu == 8);
 			}
 			if (!ting_zhi)
 			{
@@ -1331,7 +1331,7 @@ namespace 微型雕刻机2
 				timer3.Enabled = false;
 				timer3.Enabled = false;
 				label12.Visible = true;
-				diao.ting_zhi();
+				engraver.ting_zhi();
 				kai_shi = false;
 				gai_bian = true;
 				timer3.Enabled = false;
@@ -1342,7 +1342,7 @@ namespace 微型雕刻机2
 			}
 			timer3.Enabled = false;
 			label12.Visible = true;
-			diao.ting_zhi();
+			engraver.ting_zhi();
 			kai_shi = false;
 			gai_bian = true;
 			timer3.Enabled = false;
@@ -1351,7 +1351,7 @@ namespace 微型雕刻机2
 			return true;
 		}
 
-		public bool diaoke3()
+		public bool engraverke3()
 		{
 			int num = 0;
 			int num2 = 0;
@@ -1359,17 +1359,17 @@ namespace 微型雕刻机2
 			byte b = 0;
 			if (li_san.Checked)
 			{
-				diao.li_san_mo_shi();
+				engraver.li_san_mo_shi();
 			}
 			else
 			{
-				diao.fei_li_san_mo_shi();
+				engraver.fei_li_san_mo_shi();
 			}
-			diao.fu_wei();
-			diao.kai_feng();
+			engraver.fu_wei();
+			engraver.kai_feng();
 			fen = true;
-			diao.kai_shi((int)((double)(panel1.Location.X - 25) * 3.2), (int)((double)(panel1.Location.Y - 60) * 3.2));
-			byte[] array = (diao.tu_pian.Width % 8 <= 0) ? new byte[diao.tu_pian.Width / 8 + 9] : new byte[diao.tu_pian.Width / 8 + 10];
+			engraver.kai_shi((int)((double)(panel1.Location.X - 25) * 3.2), (int)((double)(panel1.Location.Y - 60) * 3.2));
+			byte[] array = (engraver.tu_pian.Width % 8 <= 0) ? new byte[engraver.tu_pian.Width / 8 + 9] : new byte[engraver.tu_pian.Width / 8 + 10];
 			byte[] array2 = new byte[8]
 			{
 				128,
@@ -1381,11 +1381,11 @@ namespace 微型雕刻机2
 				2,
 				1
 			};
-			hei_dian_shu = diao.qu_hei_dian();
+			hei_dian_shu = engraver.qu_hei_dian();
 			timer3.Enabled = true;
 			miao = 0;
 			label12.Visible = true;
-			for (num = wei_zhi; num < diao.tu_pian.Height; num++)
+			for (num = wei_zhi; num < engraver.tu_pian.Height; num++)
 			{
 				num3 = 0;
 				for (num2 = 0; num2 < array.Length - 9; num2++)
@@ -1394,10 +1394,10 @@ namespace 微型雕刻机2
 					b = 0;
 					for (num4 = 0; num4 < 8; num4++)
 					{
-						if (num2 * 8 + num4 < diao.tu_pian.Width && diao.tu_pian.GetPixel(num2 * 8 + num4, num).R == 0)
+						if (num2 * 8 + num4 < engraver.tu_pian.Width && engraver.tu_pian.GetPixel(num2 * 8 + num4, num).R == 0)
 						{
 							b = (byte)(b | array2[num4]);
-							diao.tu_pian.SetPixel(num2 * 8 + num4, num, Color.Red);
+							engraver.tu_pian.SetPixel(num2 * 8 + num4, num, Color.Red);
 						}
 					}
 					array[num3 + 9] = b;
@@ -1412,7 +1412,7 @@ namespace 微型雕刻机2
 				array[6] = (byte)(laserStrength.Value * 10);
 				array[7] = (byte)(num >> 8);
 				array[8] = (byte)num;
-				diao.fanhui = false;
+				engraver.fanhui = false;
 				bool flag = false;
 				for (int i = 9; i < array.Length; i++)
 				{
@@ -1460,14 +1460,14 @@ namespace 微型雕刻机2
 								}
 							}
 							Thread.Sleep(100);
-							diao_ke_ji.处理事件();
+							engraving_machine.处理事件();
 						}
 						while (!flag2);
 						com.Open();
 						goto IL_0280;
 					}
 					int num5 = 0;
-					while (!diao.fanhui)
+					while (!engraver.fanhui)
 					{
 						if (!com.IsOpen)
 						{
@@ -1476,7 +1476,7 @@ namespace 微型雕刻机2
 						num5++;
 						if (ting_zhi)
 						{
-							diao.ting_zhi();
+							engraver.ting_zhi();
 							kai_shi = false;
 							gai_bian = true;
 							timer3.Enabled = false;
@@ -1488,11 +1488,11 @@ namespace 微型雕刻机2
 						{
 							if (fen)
 							{
-								diao.kai_feng2();
+								engraver.kai_feng2();
 							}
 							else
 							{
-								diao.guan_feng2();
+								engraver.guan_feng2();
 							}
 							feng_shang = false;
 						}
@@ -1500,25 +1500,25 @@ namespace 微型雕刻机2
 						{
 							if (zan_ting2)
 							{
-								diao.zan_ting();
+								engraver.zan_ting();
 								timer3.Enabled = false;
 							}
 							else
 							{
-								diao.ji_xu();
+								engraver.ji_xu();
 								timer3.Enabled = true;
 							}
 							zan_ting = false;
 						}
-						diao_ke_ji.处理事件();
+						engraving_machine.处理事件();
 						Thread.Sleep(10);
 					}
 					gai_bian = true;
 					shu_xin();
-					diao_ke_ji.处理事件();
+					engraving_machine.处理事件();
 					Thread.Sleep(10);
 				}
-				while (diao.fanhui_shu == 8);
+				while (engraver.fanhui_shu == 8);
 			}
 			if (!ting_zhi)
 			{
@@ -1527,7 +1527,7 @@ namespace 微型雕刻机2
 				timer3.Enabled = false;
 				timer3.Enabled = false;
 				label12.Visible = true;
-				diao.ting_zhi();
+				engraver.ting_zhi();
 				kai_shi = false;
 				gai_bian = true;
 				timer3.Enabled = false;
@@ -1539,7 +1539,7 @@ namespace 微型雕刻机2
 			}
 			timer3.Enabled = false;
 			label12.Visible = true;
-			diao.ting_zhi();
+			engraver.ting_zhi();
 			kai_shi = false;
 			gai_bian = true;
 			timer3.Enabled = false;
@@ -1548,20 +1548,20 @@ namespace 微型雕刻机2
 			return true;
 		}
 
-		public bool diaoke_hui()
+		public bool engraverke_hui()
 		{
 			int num = 0;
 			int num2 = 0;
 			int num3 = 0;
 			int num4 = 0;
-			diao.fei_li_san_mo_shi();
-			diao.fu_wei();
-			diao.kai_feng();
+			engraver.fei_li_san_mo_shi();
+			engraver.fu_wei();
+			engraver.kai_feng();
 			fen = true;
-			diao.kai_shi((int)((double)(panel1.Location.X - 25) * 3.2), (int)((double)(panel1.Location.Y - 60) * 3.2));
-			byte[] array = new byte[diao.tu_pian.Width + 9];
-			num3 = diao.tu_pian.Width;
-			num4 = diao.tu_pian.Height;
+			engraver.kai_shi((int)((double)(panel1.Location.X - 25) * 3.2), (int)((double)(panel1.Location.Y - 60) * 3.2));
+			byte[] array = new byte[engraver.tu_pian.Width + 9];
+			num3 = engraver.tu_pian.Width;
+			num4 = engraver.tu_pian.Height;
 			_ = new byte[8]
 			{
 				128,
@@ -1580,8 +1580,8 @@ namespace 微型雕刻机2
 			{
 				for (num2 = 0; num2 < num3; num2++)
 				{
-					array[num2 + 9] = (byte)(255 - diao.tu_pian.GetPixel(num2, num).R);
-					diao.tu_pian.SetPixel(num2, num, Color.FromArgb(diao.tu_pian.GetPixel(num2, num).R, 0, 0));
+					array[num2 + 9] = (byte)(255 - engraver.tu_pian.GetPixel(num2, num).R);
+					engraver.tu_pian.SetPixel(num2, num, Color.FromArgb(engraver.tu_pian.GetPixel(num2, num).R, 0, 0));
 				}
 				bool flag = false;
 				for (num2 = 9; num2 < num3; num2++)
@@ -1606,7 +1606,7 @@ namespace 微型雕刻机2
 				array[6] = (byte)(laserStrength.Value * 10);
 				array[7] = (byte)(num >> 8);
 				array[8] = (byte)num;
-				diao.fanhui = false;
+				engraver.fanhui = false;
 				try
 				{
 					if (!com.IsOpen)
@@ -1619,12 +1619,12 @@ namespace 微型雕刻机2
 				{
 					MessageBox.Show(ex.ToString());
 				}
-				diao_ke_ji.处理事件();
-				while (!diao.fanhui)
+				engraving_machine.处理事件();
+				while (!engraver.fanhui)
 				{
 					if (ting_zhi)
 					{
-						diao.ting_zhi();
+						engraver.ting_zhi();
 						kai_shi = false;
 						gai_bian = true;
 						timer3.Enabled = false;
@@ -1638,11 +1638,11 @@ namespace 微型雕刻机2
 						Thread.Sleep(500);
 						if (fen)
 						{
-							diao.kai_feng2();
+							engraver.kai_feng2();
 						}
 						else
 						{
-							diao.guan_feng2();
+							engraver.guan_feng2();
 						}
 						feng_shang = false;
 					}
@@ -1651,16 +1651,16 @@ namespace 微型雕刻机2
 						if (zan_ting2)
 						{
 							timer3.Enabled = false;
-							diao.zan_ting();
+							engraver.zan_ting();
 						}
 						else
 						{
 							timer3.Enabled = true;
-							diao.ji_xu();
+							engraver.ji_xu();
 						}
 						zan_ting = false;
 					}
-					diao_ke_ji.处理事件();
+					engraving_machine.处理事件();
 					Thread.Sleep(10);
 				}
 				gai_bian = true;
@@ -1673,7 +1673,7 @@ namespace 微型雕刻机2
 				timer3.Enabled = false;
 				timer3.Enabled = false;
 				label12.Visible = true;
-				diao.ting_zhi();
+				engraver.ting_zhi();
 				kai_shi = false;
 				gai_bian = true;
 				timer3.Enabled = false;
@@ -1685,7 +1685,7 @@ namespace 微型雕刻机2
 			}
 			timer3.Enabled = false;
 			label12.Visible = true;
-			diao.ting_zhi();
+			engraver.ting_zhi();
 			kai_shi = false;
 			gai_bian = true;
 			timer3.Enabled = false;
@@ -1933,11 +1933,11 @@ namespace 微型雕刻机2
 
 		private void checkBox2_CheckedChanged(object sender, EventArgs e)
 		{
-			if (diao.tu_pian != null)
+			if (engraver.tu_pian != null)
 			{
 				if (checkBox2.Checked)
 				{
-					diao.kai_kuang2(bj[1] - bj[0], bj[3] - bj[2], bj[0], bj[2]);
+					engraver.kai_kuang2(bj[1] - bj[0], bj[3] - bj[2], bj[0], bj[2]);
 					gai_bian = true;
 					shu_xin();
 				}
@@ -1945,7 +1945,7 @@ namespace 微型雕刻机2
 				{
 					gai_bian = true;
 					shu_xin();
-					diao.guan_kuang2();
+					engraver.guan_kuang2();
 				}
 			}
 		}
@@ -1959,7 +1959,7 @@ namespace 微型雕刻机2
 		private void button7_Click(object sender, EventArgs e)
 		{
 			_ = wei_zhi;
-			_ = diao.kuan_gao;
+			_ = engraver.kuan_gao;
 		}
 
 		private void panel2_Paint(object sender, PaintEventArgs e)
@@ -1970,7 +1970,7 @@ namespace 微型雕刻机2
 		{
 			if (kai_shi)
 			{
-				diao.gong_shen(laserStrength.Value * 10, laserDepth.Value);
+				engraver.gong_shen(laserStrength.Value * 10, laserDepth.Value);
 			}
 		}
 
@@ -2096,13 +2096,13 @@ namespace 微型雕刻机2
 
 		private void button15_Click(object sender, EventArgs e)
 		{
-			diao.guan_ruo_guang();
-			diao.dian_deng(laserDepth.Value);
+			engraver.guan_ruo_guang();
+			engraver.dian_deng(laserDepth.Value);
 		}
 
 		private void button16_Click(object sender, EventArgs e)
 		{
-			diao.tuo_ji_da_yin();
+			engraver.tuo_ji_da_yin();
 		}
 
 		private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
@@ -2115,11 +2115,11 @@ namespace 微型雕刻机2
 			{
 				if (zhuang_tai == 2)
 				{
-					diao.duoji2(jdt, zhixian);
+					engraver.duoji2(jdt, zhixian);
 				}
 				else
 				{
-					diao.duoji(jdt);
+					engraver.duoji(jdt);
 				}
 			}
 		}
@@ -2131,27 +2131,27 @@ namespace 微型雕刻机2
 				fan_se = !fan_se;
 				gai_bian = true;
 				shu_xin();
-				bj = tu_xiang.qu_bian_jie2(diao.tu_pian);
+				bj = tu_xiang.qu_bian_jie2(engraver.tu_pian);
 			}
 		}
 
 		private void button18_Click(object sender, EventArgs e)
 		{
 			suofang += 5;
-			Bitmap image = new Bitmap(tu_xiang.suofang(tu, diao.kuan_gao + suofang, diao.kuan_gao + suofang));
-			Graphics.FromImage(diao.tu).DrawImage(image, 0, 0);
-			diao.tu_pian = diao.dou_dong(contrast.Value);
+			Bitmap image = new Bitmap(tu_xiang.suofang(tu, engraver.kuan_gao + suofang, engraver.kuan_gao + suofang));
+			Graphics.FromImage(engraver.tu).DrawImage(image, 0, 0);
+			engraver.tu_pian = engraver.dou_dong(contrast.Value);
 			shu_xin();
 		}
 
 		private void button19_Click(object sender, EventArgs e)
 		{
 			suofang -= 5;
-			Bitmap image = new Bitmap(tu_xiang.suofang(tu, diao.kuan_gao + suofang, diao.kuan_gao + suofang));
-			Graphics graphics = Graphics.FromImage(diao.tu);
+			Bitmap image = new Bitmap(tu_xiang.suofang(tu, engraver.kuan_gao + suofang, engraver.kuan_gao + suofang));
+			Graphics graphics = Graphics.FromImage(engraver.tu);
 			graphics.Clear(Color.White);
 			graphics.DrawImage(image, 0, 0);
-			diao.tu_pian = diao.dou_dong(contrast.Value);
+			engraver.tu_pian = engraver.dou_dong(contrast.Value);
 			shu_xin();
 		}
 
@@ -2161,7 +2161,7 @@ namespace 微型雕刻机2
 			quan_bu_shua_xin();
 			if (checkBox2.Checked)
 			{
-				diao.kai_kuang(diao.tu_pian.Width, diao.tu_pian.Height);
+				engraver.kai_kuang(engraver.tu_pian.Width, engraver.tu_pian.Height);
 			}
 			pan_yidong();
 		}
@@ -2178,7 +2178,7 @@ namespace 微型雕刻机2
 				if (tj)
 				{
 					button29.Text = str8;
-					diao.ting_zhi_tj();
+					engraver.ting_zhi_tj();
 				}
 			}
 		}
@@ -2216,7 +2216,7 @@ namespace 微型雕刻机2
 
 		private void button23_Click(object sender, EventArgs e)
 		{
-			if (zhuang_tai != 2 && diao.tu_pian != null)
+			if (zhuang_tai != 2 && engraver.tu_pian != null)
 			{
 				gai_bian = true;
 				if (ca)
@@ -2242,13 +2242,13 @@ namespace 微型雕刻机2
 				graphics.Clear(Color.White);
 				graphics.Dispose();
 				tu = null;
-				diao.tu = null;
-				diao.tu_pian = null;
+				engraver.tu = null;
+				engraver.tu_pian = null;
 				wen_jian_ming = "";
 				w_z = null;
 				if (checkBox2.Checked)
 				{
-					diao.guan_kuang();
+					engraver.guan_kuang();
 					checkBox2.Checked = false;
 				}
 				wzms = true;
@@ -2278,7 +2278,7 @@ namespace 微型雕刻机2
 
 		private void button16_Click_1(object sender, EventArgs e)
 		{
-			diao.tuo_ji_da_yin();
+			engraver.tuo_ji_da_yin();
 		}
 
 		private void Form1_DragEnter(object sender, DragEventArgs e)
@@ -2359,7 +2359,7 @@ namespace 微型雕刻机2
 
 		private void com_DataReceived(object sender, SerialDataReceivedEventArgs e)
 		{
-			if (diao.lianjie)
+			if (engraver.lianjie)
 			{
 				if (tj)
 				{
@@ -2369,11 +2369,11 @@ namespace 微型雕刻机2
 					}
 					if (com.BytesToRead == 1)
 					{
-						diao.fanhui = true;
-						diao.fanhui_shu = com.ReadByte();
-						if (diao.fanhui_shu == 8)
+						engraver.fanhui = true;
+						engraver.fanhui_shu = com.ReadByte();
+						if (engraver.fanhui_shu == 8)
 						{
-							diao.fanhui_shu = 8;
+							engraver.fanhui_shu = 8;
 						}
 					}
 					else if (com.BytesToRead == 4)
@@ -2405,24 +2405,24 @@ namespace 微型雕刻机2
 						}
 						return;
 					}
-					diao.fanhui = true;
+					engraver.fanhui = true;
 					if (com.BytesToRead == 1)
 					{
-						diao.fanhui_shu = com.ReadByte();
+						engraver.fanhui_shu = com.ReadByte();
 					}
-					if (diao.fanhui_shu == 8)
+					if (engraver.fanhui_shu == 8)
 					{
-						diao.fanhui_shu = 8;
+						engraver.fanhui_shu = 8;
 					}
 					com.DiscardInBuffer();
 				}
 			}
 			else
 			{
-				diao.fanhui = true;
+				engraver.fanhui = true;
 				if (com.BytesToRead == 1)
 				{
-					diao.fanhui_shu = com.ReadByte();
+					engraver.fanhui_shu = com.ReadByte();
 				}
 			}
 		}
@@ -2443,7 +2443,7 @@ namespace 微型雕刻机2
 
 		private void button26_Click(object sender, EventArgs e)
 		{
-			diao.kai_deng();
+			engraver.kai_deng();
 		}
 
 		private void textBox4_TextChanged(object sender, EventArgs e)
@@ -2490,12 +2490,12 @@ namespace 微型雕刻机2
 			else if (fen)
 			{
 				fen = false;
-				diao.guan_feng();
+				engraver.guan_feng();
 			}
 			else
 			{
 				fen = true;
-				diao.kai_feng();
+				engraver.kai_feng();
 			}
 		}
 
@@ -2648,7 +2648,7 @@ namespace 微型雕刻机2
 			ting_zhi = false;
 			if (hui_du.Checked)
 			{
-				diaoke_hui();
+				engraverke_hui();
 			}
 			else if (tj)
 			{
@@ -2659,7 +2659,7 @@ namespace 微型雕刻机2
 			}
 			else
 			{
-				diaoke2();
+				engraverke2();
 			}
 		}
 
@@ -2687,13 +2687,13 @@ namespace 微型雕刻机2
 			byte b = 0;
 			timer_flash.Enabled = true;
 			fs_wc = false;
-			diao.kai_shi_tuo_ji((byte)((double)((panel1.Location.X + bj[0]) * 1600) / 500.0), (byte)((double)((panel1.Location.Y + bj[1]) * 1600) / 500.0), diao.tu_pian.Width, diao.tu_pian.Height, laserStrength.Value * 10, laserDepth.Value);
+			engraver.kai_shi_tuo_ji((byte)((double)((panel1.Location.X + bj[0]) * 1600) / 500.0), (byte)((double)((panel1.Location.Y + bj[1]) * 1600) / 500.0), engraver.tu_pian.Width, engraver.tu_pian.Height, laserStrength.Value * 10, laserDepth.Value);
 			while (!fs_wc)
 			{
-				diao_ke_ji.处理事件();
+				engraving_machine.处理事件();
 			}
 			timer_flash.Enabled = false;
-			byte[] array = (diao.tu_pian.Width % 8 <= 0) ? new byte[diao.tu_pian.Width / 8 + 4] : new byte[diao.tu_pian.Width / 8 + 5];
+			byte[] array = (engraver.tu_pian.Width % 8 <= 0) ? new byte[engraver.tu_pian.Width / 8 + 4] : new byte[engraver.tu_pian.Width / 8 + 5];
 			byte[] array2 = new byte[8]
 			{
 				128,
@@ -2705,7 +2705,7 @@ namespace 微型雕刻机2
 				2,
 				1
 			};
-			for (num = 0; num < diao.tu_pian.Height; num++)
+			for (num = 0; num < engraver.tu_pian.Height; num++)
 			{
 				num3 = 0;
 				for (num2 = 0; num2 < array.Length - 4; num2++)
@@ -2714,7 +2714,7 @@ namespace 微型雕刻机2
 					b = 0;
 					for (num4 = 0; num4 < 8; num4++)
 					{
-						if (num2 * 8 + num4 < diao.tu_pian.Width && diao.tu_pian.GetPixel(num2 * 8 + num4, num).R == 0)
+						if (num2 * 8 + num4 < engraver.tu_pian.Width && engraver.tu_pian.GetPixel(num2 * 8 + num4, num).R == 0)
 						{
 							b = (byte)(b | array2[num4]);
 						}
@@ -2733,7 +2733,7 @@ namespace 微型雕刻机2
 					{
 						if (!cuo_wu)
 						{
-							diao.fanhui = false;
+							engraver.fanhui = false;
 							com.Write(array, 0, array.Length);
 						}
 						else
@@ -2761,26 +2761,26 @@ namespace 微型雕刻机2
 								}
 							}
 							Thread.Sleep(100);
-							diao_ke_ji.处理事件();
+							engraving_machine.处理事件();
 						}
 						while (!flag);
 						com.Open();
 						goto IL_01e5;
 					}
-					while (!diao.fanhui)
+					while (!engraver.fanhui)
 					{
 						if (!com.IsOpen)
 						{
 							goto IL_01e5;
 						}
-						diao_ke_ji.处理事件();
+						engraving_machine.处理事件();
 						Thread.Sleep(10);
 					}
 				}
-				while (diao.fanhui_shu == 8);
-				progressBar1.Value = (int)((double)num / (double)diao.tu_pian.Height * 100.0);
+				while (engraver.fanhui_shu == 8);
+				progressBar1.Value = (int)((double)num / (double)engraver.tu_pian.Height * 100.0);
 				label14.Text = progressBar1.Value + "%";
-				diao_ke_ji.处理事件();
+				engraving_machine.处理事件();
 			}
 		}
 
@@ -2800,7 +2800,7 @@ namespace 微型雕刻机2
 			{
 				MessageBox.Show(str29);
 			}
-			diao.dao_yuandian();
+			engraver.dao_yuandian();
 			panel1.Location = new Point(25, 60);
 			x = 0;
 			y = 0;
@@ -2860,13 +2860,13 @@ namespace 微型雕刻机2
 				{
 					if (button29.Text == str8)
 					{
-						diao.zan_ting();
+						engraver.zan_ting();
 						timer3.Enabled = false;
 						button29.Text = str9;
 					}
 					else
 					{
-						diao.ji_xu();
+						engraver.ji_xu();
 						timer3.Enabled = true;
 						button29.Text = str8;
 					}
@@ -2909,13 +2909,13 @@ namespace 微型雕刻机2
 				MessageBox.Show(str29);
 				return;
 			}
-			if (diao.tu_pian == null)
+			if (engraver.tu_pian == null)
 			{
 				panel1.Location = new Point(275, 310);
 			}
 			else
 			{
-				panel1.Location = new Point(25 + (int)(500.0 - (double)diao.tu_pian.Width * 0.3125) / 2, 60 + (int)(500.0 - (double)diao.tu_pian.Height * 0.3125) / 2);
+				panel1.Location = new Point(25 + (int)(500.0 - (double)engraver.tu_pian.Width * 0.3125) / 2, 60 + (int)(500.0 - (double)engraver.tu_pian.Height * 0.3125) / 2);
 			}
 			pan_yidong();
 		}
@@ -2956,9 +2956,9 @@ namespace 微型雕刻机2
 			{
 				panel1.Location = new Point(panel1.Location.X, 560 - panel1.Height);
 			}
-			if (diao.lianjie)
+			if (engraver.lianjie)
 			{
-				diao.yidong((int)((double)(panel1.Location.X - 25 - x) * 3.2), (int)((double)(panel1.Location.Y - 60 - y) * 3.2), new PictureBox(), pp: false);
+				engraver.yidong((int)((double)(panel1.Location.X - 25 - x) * 3.2), (int)((double)(panel1.Location.Y - 60 - y) * 3.2), new PictureBox(), pp: false);
 				x = panel1.Location.X - 25;
 				y = panel1.Location.Y - 60;
 			}
@@ -3114,14 +3114,14 @@ namespace 微型雕刻机2
 					ResetSleepTimer(includeDisplay: true);
 				}
 			}
-			if (diao.lianjie)
+			if (engraver.lianjie)
 			{
 				try
 				{
 					if (!com.IsOpen && !kai_shi)
 					{
 						com.Close();
-						diao.lianjie = false;
+						engraver.lianjie = false;
 						panel3.Visible = false;
 						button1.Text = str2;
 						if (kai_shi)
@@ -3220,7 +3220,7 @@ namespace 微型雕刻机2
 				gai_bian = true;
 				panel1.Refresh();
 				pan_yidong();
-				bj = tu_xiang.qu_bian_jie2(diao.tu_pian);
+				bj = tu_xiang.qu_bian_jie2(engraver.tu_pian);
 				hua_biao_shi();
 			}
 		}
@@ -3240,7 +3240,7 @@ namespace 微型雕刻机2
 				gai_bian = true;
 				panel1.Refresh();
 				pan_yidong();
-				bj = tu_xiang.qu_bian_jie2(diao.tu_pian);
+				bj = tu_xiang.qu_bian_jie2(engraver.tu_pian);
 				hua_biao_shi();
 			}
 		}
@@ -3347,8 +3347,8 @@ namespace 微型雕刻机2
 			panel7.Visible = true;
 			tuo_ji();
 			panel7.Visible = false;
-			diao.fasong_lianjie2();
-			diao.tuoji_diaoke();
+			engraver.fasong_lianjie2();
+			engraver.tuoji_engraverke();
 			kai_shi = true;
 		}
 
@@ -3356,7 +3356,7 @@ namespace 微型雕刻机2
 		{
 			if (kai_shi)
 			{
-				diao.gong_shen(laserStrength.Value * 10, laserDepth.Value);
+				engraver.gong_shen(laserStrength.Value * 10, laserDepth.Value);
 			}
 		}
 
@@ -3429,12 +3429,12 @@ namespace 微型雕刻机2
 			{
 				if (zhong_xin)
 				{
-					diao.yidong2(-(bj[0] + (bj[1] - bj[0]) / 2), -(bj[2] + (bj[3] - bj[2]) / 2), new PictureBox(), pp: false);
+					engraver.yidong2(-(bj[0] + (bj[1] - bj[0]) / 2), -(bj[2] + (bj[3] - bj[2]) / 2), new PictureBox(), pp: false);
 					zhong_xin = false;
 				}
 				else
 				{
-					diao.yidong2(bj[0] + (bj[1] - bj[0]) / 2, bj[2] + (bj[3] - bj[2]) / 2, new PictureBox(), pp: false);
+					engraver.yidong2(bj[0] + (bj[1] - bj[0]) / 2, bj[2] + (bj[3] - bj[2]) / 2, new PictureBox(), pp: false);
 					zhong_xin = true;
 				}
 			}
@@ -3462,7 +3462,7 @@ namespace 微型雕刻机2
 				gai_bian = true;
 				panel1.Refresh();
 				pan_yidong();
-				bj = tu_xiang.qu_bian_jie2(diao.tu_pian);
+				bj = tu_xiang.qu_bian_jie2(engraver.tu_pian);
 				hua_biao_shi();
 			}
 			else if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != '.' && e.KeyChar != '-')
@@ -3495,7 +3495,7 @@ namespace 微型雕刻机2
 				gai_bian = true;
 				panel1.Refresh();
 				pan_yidong();
-				bj = tu_xiang.qu_bian_jie2(diao.tu_pian);
+				bj = tu_xiang.qu_bian_jie2(engraver.tu_pian);
 				hua_biao_shi();
 			}
 			else if ((e.KeyChar < '0' || e.KeyChar > '9') && e.KeyChar != '\b' && e.KeyChar != '.' && e.KeyChar != '-')
@@ -3508,7 +3508,7 @@ namespace 微型雕刻机2
 
 		private void button36_Click(object sender, EventArgs e)
 		{
-			if (diao.tu_pian != null)
+			if (engraver.tu_pian != null)
 			{
 				DateTime dateTime = default(DateTime);
 				dateTime = DateTime.Now;
@@ -3521,7 +3521,7 @@ namespace 微型雕刻机2
 				string str = Directory.GetCurrentDirectory() + "\\";
 				try
 				{
-					diao.tu_pian.Save(str + text + ".bmp", ImageFormat.Bmp);
+					engraver.tu_pian.Save(str + text + ".bmp", ImageFormat.Bmp);
 				}
 				catch (Exception ex)
 				{

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace 微型雕刻机2
 {
-	internal class diao_ke_ji
+	internal class engraving_machine
 	{
 		public SerialPort com;
 
@@ -30,7 +30,7 @@ namespace 微型雕刻机2
 
 		private bool jinru;
 
-		public diao_ke_ji(SerialPort p)
+		public engraving_machine(SerialPort p)
 		{
 			tu_pian = new Bitmap(10, 10);
 			Graphics.FromImage(tu_pian).Clear(Color.White);
@@ -146,7 +146,7 @@ namespace 微型雕刻机2
 			return false;
 		}
 
-		public bool tuoji_diaoke()
+		public bool tuoji_engraverke()
 		{
 			if (!com.IsOpen)
 			{
@@ -219,7 +219,7 @@ namespace 微型雕刻机2
 			return false;
 		}
 
-		public bool tuo_ji_diaoke()
+		public bool tuo_ji_engraverke()
 		{
 			if (!com.IsOpen)
 			{

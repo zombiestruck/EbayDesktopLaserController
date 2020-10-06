@@ -36,7 +36,7 @@ namespace 微型雕刻机2
 		private void guanyu_Load(object sender, EventArgs e)
 		{
 			linkLabel1.Links.Add(0, 4, "http://blog.sina.com.cn/mcudiyck");
-			linkLabel2.Links.Add(0, 4, "https://diaokejidiy.taobao.com/");
+			linkLabel2.Links.Add(0, 4, "https://engraverkejidiy.taobao.com/");
 		}
 
 		private void button1_Click(object sender, EventArgs e)
