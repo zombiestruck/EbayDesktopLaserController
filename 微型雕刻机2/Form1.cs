@@ -371,7 +371,7 @@ namespace 微型雕刻机2
 
 		private TextBox textBox2;
 
-		private TrackBar trackBar2;
+		private TrackBar contrast;
 
 		private Label label2;
 
@@ -383,7 +383,7 @@ namespace 微型雕刻机2
 
 		private TextBox textBox3;
 
-		private TrackBar trackBar1;
+		private TrackBar laserDepth;
 
 		private Label label1;
 
@@ -712,7 +712,7 @@ namespace 微型雕刻机2
 			}
 			if (hei_bai.Checked)
 			{
-				diao.tu_pian = diao.hei_bai(trackBar2.Value);
+				diao.tu_pian = diao.hei_bai(contrast.Value);
 				if (fan_se)
 				{
 					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
@@ -720,7 +720,7 @@ namespace 微型雕刻机2
 			}
 			else if (li_san.Checked)
 			{
-				diao.tu_pian = diao.dou_dong(trackBar2.Value);
+				diao.tu_pian = diao.dou_dong(contrast.Value);
 				if (fan_se)
 				{
 					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
@@ -728,7 +728,7 @@ namespace 微型雕刻机2
 			}
 			else
 			{
-				diao.tu_pian = diao.hui_du(trackBar2.Value);
+				diao.tu_pian = diao.hui_du(contrast.Value);
 				if (fan_se)
 				{
 					diao.tu_pian = tu_xiang.fanse_huidu(diao.tu_pian);
@@ -745,11 +745,11 @@ namespace 微型雕刻机2
 			tu = new Bitmap(bitmap);
 			bitmap.Dispose();
 			diao.tu = tu;
-			trackBar2.Value = 128;
+			contrast.Value = 128;
 			trackBar3.Value = trackBar3.Maximum / 2 + 10;
 			if (hei_bai.Checked)
 			{
-				diao.tu_pian = diao.hei_bai(trackBar2.Value);
+				diao.tu_pian = diao.hei_bai(contrast.Value);
 				if (fan_se)
 				{
 					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
@@ -757,7 +757,7 @@ namespace 微型雕刻机2
 			}
 			else if (li_san.Checked)
 			{
-				diao.tu_pian = diao.dou_dong(trackBar2.Value);
+				diao.tu_pian = diao.dou_dong(contrast.Value);
 				if (fan_se)
 				{
 					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
@@ -765,7 +765,7 @@ namespace 微型雕刻机2
 			}
 			else
 			{
-				diao.tu_pian = diao.hui_du(trackBar2.Value);
+				diao.tu_pian = diao.hui_du(contrast.Value);
 			}
 			bj2 = tu_xiang.qu_bian_jie2(diao.tu_pian);
 			bj[0] = bj2[0];
@@ -790,11 +790,11 @@ namespace 微型雕刻机2
 				}
 			}
 			diao.tu = tu;
-			trackBar2.Value = 128;
+			contrast.Value = 128;
 			trackBar3.Value = trackBar3.Maximum / 2 + 10;
 			if (hei_bai.Checked)
 			{
-				diao.tu_pian = diao.hei_bai(trackBar2.Value);
+				diao.tu_pian = diao.hei_bai(contrast.Value);
 				if (fan_se)
 				{
 					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
@@ -802,7 +802,7 @@ namespace 微型雕刻机2
 			}
 			else if (li_san.Checked)
 			{
-				diao.tu_pian = diao.dou_dong(trackBar2.Value);
+				diao.tu_pian = diao.dou_dong(contrast.Value);
 				if (fan_se)
 				{
 					diao.tu_pian = tu_xiang.fanse(diao.tu_pian);
@@ -810,7 +810,7 @@ namespace 微型雕刻机2
 			}
 			else
 			{
-				diao.tu_pian = diao.hui_du(trackBar2.Value);
+				diao.tu_pian = diao.hui_du(contrast.Value);
 			}
 			bj2 = tu_xiang.qu_bian_jie2(diao.tu_pian);
 			bj[0] = bj2[0];
@@ -1050,13 +1050,13 @@ namespace 微型雕刻机2
 			listBox1.SelectedIndex = 0;
 		}
 
-		private void trackBar2_MouseUp(object sender, MouseEventArgs e)
+		private void contrast_MouseUp(object sender, MouseEventArgs e)
 		{
 			if (!kai_shi)
 			{
 				gai_bian = true;
 				shu_xin();
-				textBox3.Text = trackBar2.Value.ToString();
+				textBox3.Text = contrast.Value.ToString();
 			}
 		}
 
@@ -1100,7 +1100,7 @@ namespace 微型雕刻机2
 				point = new Point(zhixian[wei_zhi].X + dx, zhixian[wei_zhi].Y + dy);
 				diao.gai_bian_F(0);
 				diao.kai_deng();
-				diao.gai_bian_F(trackBar1.Value);
+				diao.gai_bian_F(laserDepth.Value);
 			}
 			else
 			{
@@ -1114,7 +1114,7 @@ namespace 微型雕刻机2
 					{
 						flag = true;
 						diao.kai_deng();
-						diao.gai_bian_F(trackBar1.Value);
+						diao.gai_bian_F(laserDepth.Value);
 					}
 					if (zhixian[i].X == 601)
 					{
@@ -1151,8 +1151,8 @@ namespace 微型雕刻机2
 				graphics.Dispose();
 				zhuang_tai = 2;
 				textBox1.Text = "10";
-				trackBar1.Maximum = 35;
-				trackBar1.Value = 12;
+				laserDepth.Maximum = 35;
+				laserDepth.Value = 12;
 				textBox1.Text = "12";
 				dx = 0;
 				dy = 0;
@@ -1217,8 +1217,8 @@ namespace 微型雕刻机2
 				array[0] = 9;
 				array[1] = (byte)(array.Length >> 8);
 				array[2] = (byte)array.Length;
-				array[3] = (byte)(trackBar1.Value >> 8);
-				array[4] = (byte)trackBar1.Value;
+				array[3] = (byte)(laserDepth.Value >> 8);
+				array[4] = (byte)laserDepth.Value;
 				array[5] = (byte)(laserStrength.Value * 10 >> 8);
 				array[6] = (byte)(laserStrength.Value * 10);
 				array[7] = (byte)(num >> 8);
@@ -1413,8 +1413,8 @@ namespace 微型雕刻机2
 				array[0] = 9;
 				array[1] = (byte)(array.Length >> 8);
 				array[2] = (byte)array.Length;
-				array[3] = (byte)(trackBar1.Value >> 8);
-				array[4] = (byte)trackBar1.Value;
+				array[3] = (byte)(laserDepth.Value >> 8);
+				array[4] = (byte)laserDepth.Value;
 				array[5] = (byte)(laserStrength.Value * 10 >> 8);
 				array[6] = (byte)(laserStrength.Value * 10);
 				array[7] = (byte)(num >> 8);
@@ -1607,8 +1607,8 @@ namespace 微型雕刻机2
 				array[0] = 19;
 				array[1] = (byte)(array.Length >> 8);
 				array[2] = (byte)array.Length;
-				array[3] = (byte)(trackBar1.Value >> 8);
-				array[4] = (byte)trackBar1.Value;
+				array[3] = (byte)(laserDepth.Value >> 8);
+				array[4] = (byte)laserDepth.Value;
 				array[5] = (byte)(laserStrength.Value * 10 >> 8);
 				array[6] = (byte)(laserStrength.Value * 10);
 				array[7] = (byte)(num >> 8);
@@ -1973,11 +1973,11 @@ namespace 微型雕刻机2
 		{
 		}
 
-		private void trackBar1_MouseUp(object sender, MouseEventArgs e)
+		private void laserDepth_MouseUp(object sender, MouseEventArgs e)
 		{
 			if (kai_shi)
 			{
-				diao.gong_shen(laserStrength.Value * 10, trackBar1.Value);
+				diao.gong_shen(laserStrength.Value * 10, laserDepth.Value);
 			}
 		}
 
@@ -1989,12 +1989,12 @@ namespace 微型雕刻机2
 				{
 					if (Convert.ToInt32(textBox1.Text) < 1000)
 					{
-						trackBar1.Value = Convert.ToInt32(textBox1.Text);
+						laserDepth.Value = Convert.ToInt32(textBox1.Text);
 					}
 					else
 					{
 						textBox1.Text = "1000";
-						trackBar1.Value = 1000;
+						laserDepth.Value = 1000;
 					}
 				}
 				catch (Exception ex)
@@ -2006,7 +2006,7 @@ namespace 微型雕刻机2
 
 		private void textBox3_TextChanged(object sender, EventArgs e)
 		{
-			trackBar2.Value = Convert.ToInt32(textBox3.Text);
+			contrast.Value = Convert.ToInt32(textBox3.Text);
 		}
 
 		private void button11_Click(object sender, EventArgs e)
@@ -2104,7 +2104,7 @@ namespace 微型雕刻机2
 		private void button15_Click(object sender, EventArgs e)
 		{
 			diao.guan_ruo_guang();
-			diao.dian_deng(trackBar1.Value);
+			diao.dian_deng(laserDepth.Value);
 		}
 
 		private void button16_Click(object sender, EventArgs e)
@@ -2147,7 +2147,7 @@ namespace 微型雕刻机2
 			suofang += 5;
 			Bitmap image = new Bitmap(tu_xiang.suofang(tu, diao.kuan_gao + suofang, diao.kuan_gao + suofang));
 			Graphics.FromImage(diao.tu).DrawImage(image, 0, 0);
-			diao.tu_pian = diao.dou_dong(trackBar2.Value);
+			diao.tu_pian = diao.dou_dong(contrast.Value);
 			shu_xin();
 		}
 
@@ -2158,7 +2158,7 @@ namespace 微型雕刻机2
 			Graphics graphics = Graphics.FromImage(diao.tu);
 			graphics.Clear(Color.White);
 			graphics.DrawImage(image, 0, 0);
-			diao.tu_pian = diao.dou_dong(trackBar2.Value);
+			diao.tu_pian = diao.dou_dong(contrast.Value);
 			shu_xin();
 		}
 
@@ -2560,7 +2560,7 @@ namespace 微型雕刻机2
 			if (!kai_shi)
 			{
 				gai_bian = true;
-				trackBar2.Value = 128;
+				contrast.Value = 128;
 				textBox1.Text = "10";
 				textBox3.Text = "128";
 				if (!(wen_jian_ming == ""))
@@ -2577,7 +2577,7 @@ namespace 微型雕刻机2
 			if (!kai_shi)
 			{
 				gai_bian = true;
-				trackBar2.Value = 128;
+				contrast.Value = 128;
 				textBox1.Text = "10";
 				textBox3.Text = "128";
 				if (!textBox2.Visible && !(wen_jian_ming == ""))
@@ -2593,7 +2593,7 @@ namespace 微型雕刻机2
 		{
 			if (!kai_shi && !textBox2.Visible)
 			{
-				trackBar2.Value = 128;
+				contrast.Value = 128;
 				gai_bian = true;
 				textBox1.Text = "10";
 				textBox3.Text = "128";
@@ -2694,7 +2694,7 @@ namespace 微型雕刻机2
 			byte b = 0;
 			timer_flash.Enabled = true;
 			fs_wc = false;
-			diao.kai_shi_tuo_ji((byte)((double)((panel1.Location.X + bj[0]) * 1600) / 500.0), (byte)((double)((panel1.Location.Y + bj[1]) * 1600) / 500.0), diao.tu_pian.Width, diao.tu_pian.Height, laserStrength.Value * 10, trackBar1.Value);
+			diao.kai_shi_tuo_ji((byte)((double)((panel1.Location.X + bj[0]) * 1600) / 500.0), (byte)((double)((panel1.Location.Y + bj[1]) * 1600) / 500.0), diao.tu_pian.Width, diao.tu_pian.Height, laserStrength.Value * 10, laserDepth.Value);
 			while (!fs_wc)
 			{
 				diao_ke_ji.处理事件();
@@ -3252,14 +3252,14 @@ namespace 微型雕刻机2
 			}
 		}
 
-		private void trackBar2_Scroll(object sender, EventArgs e)
+		private void contrast_Scroll(object sender, EventArgs e)
 		{
-			textBox3.Text = trackBar2.Value.ToString();
+			textBox3.Text = contrast.Value.ToString();
 		}
 
-		private void trackBar1_Scroll(object sender, EventArgs e)
+		private void laserDepth_Scroll(object sender, EventArgs e)
 		{
-			textBox1.Text = trackBar1.Value.ToString();
+			textBox1.Text = laserDepth.Value.ToString();
 		}
 
 		private void zi_ti()
@@ -3363,7 +3363,7 @@ namespace 微型雕刻机2
 		{
 			if (kai_shi)
 			{
-				diao.gong_shen(laserStrength.Value * 10, trackBar1.Value);
+				diao.gong_shen(laserStrength.Value * 10, laserDepth.Value);
 			}
 		}
 
@@ -3607,13 +3607,13 @@ namespace 微型雕刻机2
             this.button16 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.button27 = new System.Windows.Forms.Button();
-            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.contrast = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.hei_bai = new System.Windows.Forms.RadioButton();
             this.li_san = new System.Windows.Forms.RadioButton();
             this.hui_du = new System.Windows.Forms.RadioButton();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.laserDepth = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.laserStrength = new System.Windows.Forms.TrackBar();
@@ -3674,8 +3674,8 @@ namespace 微型雕刻机2
             this.timer_flash = new System.Windows.Forms.Timer(this.components);
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contrast)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laserDepth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laserStrength)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -4080,16 +4080,16 @@ namespace 微型雕刻机2
             this.button27.UseVisualStyleBackColor = false;
             this.button27.Click += new System.EventHandler(this.button27_Click);
             // 
-            // trackBar2
+            // contrast
             // 
-            this.trackBar2.Location = new System.Drawing.Point(3, 22);
-            this.trackBar2.Maximum = 253;
-            this.trackBar2.Name = "trackBar2";
-            this.trackBar2.Size = new System.Drawing.Size(194, 45);
-            this.trackBar2.TabIndex = 16;
-            this.trackBar2.Value = 128;
-            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
-            this.trackBar2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar2_MouseUp);
+            this.contrast.Location = new System.Drawing.Point(3, 22);
+            this.contrast.Maximum = 253;
+            this.contrast.Name = "contrast";
+            this.contrast.Size = new System.Drawing.Size(194, 45);
+            this.contrast.TabIndex = 16;
+            this.contrast.Value = 128;
+            this.contrast.Scroll += new System.EventHandler(this.contrast_Scroll);
+            this.contrast.MouseUp += new System.Windows.Forms.MouseEventHandler(this.contrast_MouseUp);
             // 
             // label2
             // 
@@ -4151,17 +4151,17 @@ namespace 微型雕刻机2
             this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // trackBar1
+            // laserDepth
             // 
-            this.trackBar1.Location = new System.Drawing.Point(3, 22);
-            this.trackBar1.Maximum = 255;
-            this.trackBar1.Minimum = 1;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(191, 45);
-            this.trackBar1.TabIndex = 8;
-            this.trackBar1.Value = 10;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            this.trackBar1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.trackBar1_MouseUp);
+            this.laserDepth.Location = new System.Drawing.Point(3, 22);
+            this.laserDepth.Maximum = 255;
+            this.laserDepth.Minimum = 1;
+            this.laserDepth.Name = "laserDepth";
+            this.laserDepth.Size = new System.Drawing.Size(191, 45);
+            this.laserDepth.TabIndex = 8;
+            this.laserDepth.Value = 10;
+            this.laserDepth.Scroll += new System.EventHandler(this.laserDepth_Scroll);
+            this.laserDepth.MouseUp += new System.Windows.Forms.MouseEventHandler(this.laserDepth_MouseUp);
             // 
             // label1
             // 
@@ -4282,7 +4282,7 @@ namespace 微型雕刻机2
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.trackBar1);
+            this.groupBox2.Controls.Add(this.laserDepth);
             this.groupBox2.Location = new System.Drawing.Point(532, 326);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(230, 54);
@@ -4677,7 +4677,7 @@ namespace 微型雕刻机2
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.textBox3);
-            this.groupBox5.Controls.Add(this.trackBar2);
+            this.groupBox5.Controls.Add(this.contrast);
             this.groupBox5.Location = new System.Drawing.Point(532, 207);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(231, 62);
@@ -4862,8 +4862,8 @@ namespace 微型雕刻机2
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Form1_DragEnter);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contrast)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laserDepth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laserStrength)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
