@@ -9,7 +9,7 @@ namespace MiniEngraver
 {
 	internal static class tu_xiang
 	{
-		public static Bitmap suofang(Bitmap bmp, int newW, int newH)
+		public static Bitmap zoom(Bitmap bmp, int newW, int newH)
 		{
 			try
 			{
@@ -152,11 +152,11 @@ namespace MiniEngraver
 		{
 			Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
 			BitmapData bitmapData = bmp.LockBits(rect, ImageLockMode.ReadWrite, bmp.PixelFormat);
-			IntPtr scan = bitmapData.Scan0;
+			IntPtr serasen = bitmapData.Scan0;
 			int num = Math.Abs(bitmapData.Stride) * bmp.Height;
 			byte[] array = new byte[num];
 			byte[] array2 = new byte[num];
-			Marshal.Copy(scan, array, 0, num);
+			Marshal.Copy(serasen, array, 0, num);
 			int num2 = 0;
 			for (int i = 0; i < array.Length; i += 4)
 			{
@@ -166,7 +166,7 @@ namespace MiniEngraver
 				array2[i + 2] = (byte)num2;
 				array2[i + 3] = byte.MaxValue;
 			}
-			Marshal.Copy(array2, 0, scan, num);
+			Marshal.Copy(array2, 0, serasen, num);
 			bmp.UnlockBits(bitmapData);
 			return bmp;
 		}
@@ -175,11 +175,11 @@ namespace MiniEngraver
 		{
 			Rectangle rect = new Rectangle(0, 0, bmp.Width, bmp.Height);
 			BitmapData bitmapData = bmp.LockBits(rect, ImageLockMode.ReadWrite, bmp.PixelFormat);
-			IntPtr scan = bitmapData.Scan0;
+			IntPtr serasen = bitmapData.Scan0;
 			int num = Math.Abs(bitmapData.Stride) * bmp.Height;
 			byte[] array = new byte[num];
 			byte[] array2 = new byte[num];
-			Marshal.Copy(scan, array, 0, num);
+			Marshal.Copy(serasen, array, 0, num);
 			int num2 = 0;
 			for (int i = 0; i < array.Length; i += 4)
 			{
@@ -190,7 +190,7 @@ namespace MiniEngraver
 				array2[i + 2] = (byte)num2;
 				array2[i + 3] = byte.MaxValue;
 			}
-			Marshal.Copy(array2, 0, scan, num);
+			Marshal.Copy(array2, 0, serasen, num);
 			bmp.UnlockBits(bitmapData);
 			return bmp;
 		}

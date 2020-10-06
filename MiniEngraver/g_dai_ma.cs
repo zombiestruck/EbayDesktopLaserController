@@ -13,7 +13,7 @@ namespace MiniEngraver
 
 		private static int bu = 10;
 
-		private static Point[] zhixian = new Point[0];
+		private static Point[] line = new Point[0];
 
 		private static double[] qu_dian_double(string str)
 		{
@@ -104,11 +104,11 @@ namespace MiniEngraver
 					{
 						cy.X = (int)(Math.Cos((double)num * (Math.PI / 180.0)) * banjing + yx);
 						cy.Y = (int)(Math.Sin((double)num * (Math.PI / 180.0)) * banjing + yy);
-						zhixian = jiaru(zhixian, cy);
+						line = jiaru(line, cy);
 					}
 					cy.X = (int)(Math.Cos(z_jiao * (Math.PI / 180.0)) * banjing + yx);
 					cy.Y = (int)(Math.Sin(z_jiao * (Math.PI / 180.0)) * banjing + yy);
-					zhixian = jiaru(zhixian, cy);
+					line = jiaru(line, cy);
 					return;
 				}
 				Point cy2 = new Point(0, 0);
@@ -116,20 +116,20 @@ namespace MiniEngraver
 				{
 					cy2.X = (int)(Math.Cos((double)num * (Math.PI / 180.0)) * banjing + yx);
 					cy2.Y = (int)(Math.Sin((double)num * (Math.PI / 180.0)) * banjing + yy);
-					zhixian = jiaru(zhixian, cy2);
+					line = jiaru(line, cy2);
 				}
 				cy2.X = (int)(Math.Cos(6.2657320146596431) * banjing + yx);
 				cy2.Y = (int)(Math.Sin(6.2657320146596431) * banjing + yy);
-				zhixian = jiaru(zhixian, cy2);
+				line = jiaru(line, cy2);
 				for (num = 0; (double)num < z_jiao - (double)bu; num += bu)
 				{
 					cy2.X = (int)(Math.Cos((double)num * (Math.PI / 180.0)) * banjing + yx);
 					cy2.Y = (int)(Math.Sin((double)num * (Math.PI / 180.0)) * banjing + yy);
-					zhixian = jiaru(zhixian, cy2);
+					line = jiaru(line, cy2);
 				}
 				cy2.X = (int)(Math.Cos(z_jiao * (Math.PI / 180.0)) * banjing + yx);
 				cy2.Y = (int)(Math.Sin(z_jiao * (Math.PI / 180.0)) * banjing + yy);
-				zhixian = jiaru(zhixian, cy2);
+				line = jiaru(line, cy2);
 			}
 			else if (z_jiao < q_jiao)
 			{
@@ -139,12 +139,12 @@ namespace MiniEngraver
 				{
 					cy3.X = (int)(Math.Cos((double)num * (Math.PI / 180.0)) * banjing + yx);
 					cy3.Y = (int)(Math.Sin((double)num * (Math.PI / 180.0)) * banjing + yy);
-					zhixian = jiaru(zhixian, cy3);
+					line = jiaru(line, cy3);
 					num -= bu;
 				}
 				cy3.X = (int)(Math.Cos(z_jiao * (Math.PI / 180.0)) * banjing + yx);
 				cy3.Y = (int)(Math.Sin(z_jiao * (Math.PI / 180.0)) * banjing + yy);
-				zhixian = jiaru(zhixian, cy3);
+				line = jiaru(line, cy3);
 			}
 			else
 			{
@@ -153,22 +153,22 @@ namespace MiniEngraver
 				{
 					cy4.X = (int)(Math.Cos((double)num * (Math.PI / 180.0)) * banjing + yx);
 					cy4.Y = (int)(Math.Sin((double)num * (Math.PI / 180.0)) * banjing + yy);
-					zhixian = jiaru(zhixian, cy4);
+					line = jiaru(line, cy4);
 				}
 				cy4.X = (int)(Math.Cos(0.0) * banjing + yx);
 				cy4.Y = (int)(Math.Sin(0.0) * banjing + yy);
-				zhixian = jiaru(zhixian, cy4);
+				line = jiaru(line, cy4);
 				num = 360;
 				while ((double)num > z_jiao + (double)bu)
 				{
 					cy4.X = (int)(Math.Cos((double)num * (Math.PI / 180.0)) * banjing + yx);
 					cy4.Y = (int)(Math.Sin((double)num * (Math.PI / 180.0)) * banjing + yy);
-					zhixian = jiaru(zhixian, cy4);
+					line = jiaru(line, cy4);
 					num -= bu;
 				}
 				cy4.X = (int)(Math.Cos(z_jiao * (Math.PI / 180.0)) * banjing + yx);
 				cy4.Y = (int)(Math.Sin(z_jiao * (Math.PI / 180.0)) * banjing + yy);
-				zhixian = jiaru(zhixian, cy4);
+				line = jiaru(line, cy4);
 			}
 		}
 
@@ -393,7 +393,7 @@ namespace MiniEngraver
 				'\r',
 				'\n'
 			}, StringSplitOptions.RemoveEmptyEntries);
-			zhixian = new Point[0];
+			line = new Point[0];
 			string[] array2 = array;
 			foreach (string text in array2)
 			{
@@ -410,7 +410,7 @@ namespace MiniEngraver
 						int num2 = 0;
 						num = (int)x_double;
 						num2 = (int)y_double;
-						zhixian = jiaru(zhixian, new Point(num, num2));
+						line = jiaru(line, new Point(num, num2));
 						break;
 					}
 					case 2:
@@ -425,15 +425,15 @@ namespace MiniEngraver
 				{
 					if (text[text.Length - 1] == '3')
 					{
-						zhixian = jiaru(zhixian, new Point(600, 0));
+						line = jiaru(line, new Point(600, 0));
 					}
 					if (text[text.Length - 1] == '5')
 					{
-						zhixian = jiaru(zhixian, new Point(601, 0));
+						line = jiaru(line, new Point(601, 0));
 					}
 				}
 			}
-			return zhixian;
+			return line;
 		}
 	}
 }

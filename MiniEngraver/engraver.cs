@@ -1077,7 +1077,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public bool ting_zhi_tj()
+		public bool stop_tj()
 		{
 			if (!com.IsOpen)
 			{
@@ -1748,7 +1748,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public bool ting_zhi()
+		public bool stop()
 		{
 			if (!com.IsOpen)
 			{
@@ -1933,22 +1933,22 @@ namespace MiniEngraver
 			jdt.Visible = false;
 		}
 
-		private byte[] sheng_cheng_tuoji2(Point[] zhixian)
+		private byte[] sheng_cheng_tuoji2(Point[] line)
 		{
-			byte[] array = new byte[zhixian.Length * 4 + 2];
-			for (int i = 0; i < zhixian.Length; i++)
+			byte[] array = new byte[line.Length * 4 + 2];
+			for (int i = 0; i < line.Length; i++)
 			{
-				array[i * 4] = (byte)(zhixian[i].X >> 8);
-				array[i * 4 + 1] = (byte)zhixian[i].X;
-				array[i * 4 + 2] = (byte)(zhixian[i].Y >> 8);
-				array[i * 4 + 3] = (byte)zhixian[i].Y;
+				array[i * 4] = (byte)(line[i].X >> 8);
+				array[i * 4 + 1] = (byte)line[i].X;
+				array[i * 4 + 2] = (byte)(line[i].Y >> 8);
+				array[i * 4 + 3] = (byte)line[i].Y;
 			}
 			array[array.Length - 2] = 254;
 			array[array.Length - 1] = 254;
 			return array;
 		}
 
-		public void duoji2(ProgressBar jdt, Point[] zhixian)
+		public void duoji2(ProgressBar jdt, Point[] line)
 		{
 			int num = 0;
 			if (!lianjie)
@@ -1957,7 +1957,7 @@ namespace MiniEngraver
 				return;
 			}
 			jdt.Visible = true;
-			byte[] array = sheng_cheng_tuoji2(zhixian);
+			byte[] array = sheng_cheng_tuoji2(line);
 			if (!zhi_lei_xing(2))
 			{
 				return;

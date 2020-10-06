@@ -32,47 +32,34 @@ namespace MiniEngraver
 
 		private int[] zysx = new int[4];
 
-		private int zhuang_tai;
+		private int status;
 
-		private Point[] zhixian = new Point[0];
+		private Point[] line = new Point[0];
 
-		private string wenben = "";
+		private string text = "";
 
 		public int x;
 
 		public int y;
 
-		private int wei_zhi;
+		private int position;
 
-		private bool hua2;
+		private bool multicolor2; //original name was multicolor2, not sure I translated this correctly
 
-		private bool anxia;
+		private bool down;
+        private bool down3;
 
-		private bool anxia2;
-
-		private bool ting_zhi;
+        private bool stop;
 
 		private bool ca;
 
-		private bool g_daima;
-
-		private int suofang;
+		private int zoom;
 
 		public Form guan;
 
 		private Bitmap tu;
 
 		private bool fan_se;
-
-		private int wen_zi_x;
-
-		private int wen_zi_y;
-
-		private Font ziti;
-
-		private bool anxia3;
-
-		private bool kuang;
 
 		private int shu_x;
 
@@ -102,7 +89,7 @@ namespace MiniEngraver
 
 		private Point yi_dian;
 
-		private bool bjk_anxia;
+		private bool bjk_down;
 
 		private int bjk_x;
 
@@ -162,7 +149,7 @@ namespace MiniEngraver
 
 		private int v_xing;
 
-		private static string vv = "v1.8";
+		private static string vv = "v2.0";
 
 		private string str1 = "Scaling";
 
@@ -284,7 +271,7 @@ namespace MiniEngraver
 
 		private int miao;
 
-		private bool z_anxia;
+		private bool z_down;
 
 		private int z_x;
 
@@ -658,7 +645,7 @@ namespace MiniEngraver
 				}
 				num3 = (double)bb2.Width * 1.0 / (double)num2;
 				num = (int)((double)bb2.Height / num3);
-				engraver.tu = tu_xiang.suofang(bb2, num2, num);
+				engraver.tu = tu_xiang.zoom(bb2, num2, num);
 			}
 			else
 			{
@@ -673,7 +660,7 @@ namespace MiniEngraver
 				}
 				num3 = (double)bb2.Height * 1.0 / (double)num;
 				num2 = (int)((double)bb2.Width / num3);
-				engraver.tu = tu_xiang.suofang(bb2, num2, num);
+				engraver.tu = tu_xiang.zoom(bb2, num2, num);
 			}
 		}
 
@@ -701,7 +688,7 @@ namespace MiniEngraver
 				_ = bj2[3];
 				_ = bj2[2];
 				double num3 = (double)num / (double)num2;
-				engraver.tu = tu_xiang.suofang(bb2, (int)((double)bb2.Width * num3), (int)((double)bb2.Height * num3));
+				engraver.tu = tu_xiang.zoom(bb2, (int)((double)bb2.Width * num3), (int)((double)bb2.Height * num3));
 			}
 			if (hei_bai.Checked)
 			{
@@ -773,13 +760,13 @@ namespace MiniEngraver
 				{
 					num3 = (double)tu.Width / 1600.0;
 					num = (int)((double)tu.Height / num3);
-					tu = tu_xiang.suofang(tu, 1600, num);
+					tu = tu_xiang.zoom(tu, 1600, num);
 				}
 				else
 				{
 					num3 = (double)tu.Height / 1520.0;
 					num2 = (int)((double)tu.Width / num3);
-					tu = tu_xiang.suofang(tu, num2, 1520);
+					tu = tu_xiang.zoom(tu, num2, 1520);
 				}
 			}
 			engraver.tu = tu;
@@ -1053,20 +1040,20 @@ namespace MiniEngraver
 			}
 		}
 
-		private void huaxian(Point[] zhixian)
+		private void huaxian(Point[] line)
 		{
 			Graphics graphics = Graphics.FromImage(engraver.tu_pian);
 			Point point = default(Point);
 			bool flag = false;
-			for (int i = 0; i < zhixian.Length; i++)
+			for (int i = 0; i < line.Length; i++)
 			{
-				if (zhixian[i].X == 600 || zhixian[i].X == 601)
+				if (line[i].X == 600 || line[i].X == 601)
 				{
-					if (zhixian[i].X == 600)
+					if (line[i].X == 600)
 					{
 						flag = true;
 					}
-					if (zhixian[i].X == 601)
+					if (line[i].X == 601)
 					{
 						flag = false;
 					}
@@ -1075,22 +1062,22 @@ namespace MiniEngraver
 				{
 					if (flag)
 					{
-						graphics.DrawLine(Pens.Blue, new Point(point.X, 500 - point.Y), new Point(zhixian[i].X, 500 - zhixian[i].Y));
+						graphics.DrawLine(Pens.Blue, new Point(point.X, 500 - point.Y), new Point(line[i].X, 500 - line[i].Y));
 					}
-					point = zhixian[i];
+					point = line[i];
 				}
 			}
 		}
 
-		private void engraverkexian(Point[] zhixian)
+		private void engraverkexian(Point[] line)
 		{
 			Graphics graphics = Graphics.FromImage(engraver.tu_pian);
 			Point point = default(Point);
 			engraver.guan_ruo_guang();
-			bool flag = hua2;
+			bool flag = multicolor2;
 			if (flag)
 			{
-				point = new Point(zhixian[wei_zhi].X + dx, zhixian[wei_zhi].Y + dy);
+				point = new Point(line[position].X + dx, line[position].Y + dy);
 				engraver.gai_bian_F(0);
 				engraver.kai_deng();
 				engraver.gai_bian_F(laserDepth.Value);
@@ -1099,17 +1086,17 @@ namespace MiniEngraver
 			{
 				engraver.gai_bian_F(0);
 			}
-			for (int i = wei_zhi; i < zhixian.Length; i++)
+			for (int i = position; i < line.Length; i++)
 			{
-				if (zhixian[i].X == 600 || zhixian[i].X == 601)
+				if (line[i].X == 600 || line[i].X == 601)
 				{
-					if (zhixian[i].X == 600)
+					if (line[i].X == 600)
 					{
 						flag = true;
 						engraver.kai_deng();
 						engraver.gai_bian_F(laserDepth.Value);
 					}
-					if (zhixian[i].X == 601)
+					if (line[i].X == 601)
 					{
 						flag = false;
 						engraver.guan_deng();
@@ -1120,9 +1107,9 @@ namespace MiniEngraver
 				{
 					if (flag)
 					{
-						graphics.DrawLine(Pens.Red, new Point(point.X, 500 - point.Y), new Point(zhixian[i].X, 500 - zhixian[i].Y));
+						graphics.DrawLine(Pens.Red, new Point(point.X, 500 - point.Y), new Point(line[i].X, 500 - line[i].Y));
 					}
-					point = zhixian[i];
+					point = line[i];
 				}
 			}
 			button4.Refresh();
@@ -1130,8 +1117,8 @@ namespace MiniEngraver
 
 		private void jie()
 		{
-			zhixian = g_dai_ma.jie_xi(wenben);
-			huaxian(zhixian);
+			line = g_dai_ma.jie_xi(text);
+			huaxian(line);
 			shuxin();
 		}
 
@@ -1142,14 +1129,14 @@ namespace MiniEngraver
 				Graphics graphics = Graphics.FromImage(engraver.tu_pian);
 				graphics.Clear(Color.White);
 				graphics.Dispose();
-				zhuang_tai = 2;
+				status = 2;
 				textBox1.Text = "10";
 				laserDepth.Maximum = 35;
 				laserDepth.Value = 12;
 				textBox1.Text = "12";
 				dx = 0;
 				dy = 0;
-				wenben = File.ReadAllText(da_kai_g.FileName);
+				text = File.ReadAllText(da_kai_g.FileName);
 				new Thread(jie).Start();
 			}
 		}
@@ -1189,7 +1176,7 @@ namespace MiniEngraver
 			miao = 0;
 			label12.Visible = true;
 			com.DiscardInBuffer();
-			for (num = wei_zhi; num < engraver.tu_pian.Height; num++)
+			for (num = position; num < engraver.tu_pian.Height; num++)
 			{
 				num3 = 0;
 				for (num2 = 0; num2 < array.Length - 9; num2++)
@@ -1278,9 +1265,9 @@ namespace MiniEngraver
 							goto IL_028b;
 						}
 						num5++;
-						if (ting_zhi)
+						if (stop)
 						{
-							engraver.ting_zhi();
+							engraver.stop();
 							kai_shi = false;
 							gai_bian = true;
 							timer3.Enabled = false;
@@ -1324,14 +1311,14 @@ namespace MiniEngraver
 				}
 				while (engraver.fanhui_shu == 8);
 			}
-			if (!ting_zhi)
+			if (!stop)
 			{
-				wei_zhi = 0;
+				position = 0;
 				kai_shi = false;
 				timer3.Enabled = false;
 				timer3.Enabled = false;
 				label12.Visible = true;
-				engraver.ting_zhi();
+				engraver.stop();
 				kai_shi = false;
 				gai_bian = true;
 				timer3.Enabled = false;
@@ -1342,7 +1329,7 @@ namespace MiniEngraver
 			}
 			timer3.Enabled = false;
 			label12.Visible = true;
-			engraver.ting_zhi();
+			engraver.stop();
 			kai_shi = false;
 			gai_bian = true;
 			timer3.Enabled = false;
@@ -1385,7 +1372,7 @@ namespace MiniEngraver
 			timer3.Enabled = true;
 			miao = 0;
 			label12.Visible = true;
-			for (num = wei_zhi; num < engraver.tu_pian.Height; num++)
+			for (num = position; num < engraver.tu_pian.Height; num++)
 			{
 				num3 = 0;
 				for (num2 = 0; num2 < array.Length - 9; num2++)
@@ -1474,9 +1461,9 @@ namespace MiniEngraver
 							goto IL_0280;
 						}
 						num5++;
-						if (ting_zhi)
+						if (stop)
 						{
-							engraver.ting_zhi();
+							engraver.stop();
 							kai_shi = false;
 							gai_bian = true;
 							timer3.Enabled = false;
@@ -1520,14 +1507,14 @@ namespace MiniEngraver
 				}
 				while (engraver.fanhui_shu == 8);
 			}
-			if (!ting_zhi)
+			if (!stop)
 			{
-				wei_zhi = 0;
+				position = 0;
 				kai_shi = false;
 				timer3.Enabled = false;
 				timer3.Enabled = false;
 				label12.Visible = true;
-				engraver.ting_zhi();
+				engraver.stop();
 				kai_shi = false;
 				gai_bian = true;
 				timer3.Enabled = false;
@@ -1539,7 +1526,7 @@ namespace MiniEngraver
 			}
 			timer3.Enabled = false;
 			label12.Visible = true;
-			engraver.ting_zhi();
+			engraver.stop();
 			kai_shi = false;
 			gai_bian = true;
 			timer3.Enabled = false;
@@ -1622,15 +1609,15 @@ namespace MiniEngraver
 				engraving_machine.处理事件();
 				while (!engraver.fanhui)
 				{
-					if (ting_zhi)
+					if (stop)
 					{
-						engraver.ting_zhi();
+						engraver.stop();
 						kai_shi = false;
 						gai_bian = true;
 						timer3.Enabled = false;
 						label12.Visible = true;
 						shu_xin();
-						ting_zhi = false;
+						stop = false;
 						return false;
 					}
 					if (feng_shang)
@@ -1666,14 +1653,14 @@ namespace MiniEngraver
 				gai_bian = true;
 				shu_xin();
 			}
-			if (!ting_zhi)
+			if (!stop)
 			{
-				wei_zhi = 0;
+				position = 0;
 				kai_shi = false;
 				timer3.Enabled = false;
 				timer3.Enabled = false;
 				label12.Visible = true;
-				engraver.ting_zhi();
+				engraver.stop();
 				kai_shi = false;
 				gai_bian = true;
 				timer3.Enabled = false;
@@ -1685,7 +1672,7 @@ namespace MiniEngraver
 			}
 			timer3.Enabled = false;
 			label12.Visible = true;
-			engraver.ting_zhi();
+			engraver.stop();
 			kai_shi = false;
 			gai_bian = true;
 			timer3.Enabled = false;
@@ -1799,14 +1786,14 @@ namespace MiniEngraver
 				button5.Text = str5;
 				textBox2.Visible = false;
 				gai_bian = true;
-				zhuang_tai = 3;
+				status = 3;
 				dx = 0;
 				dy = 0;
-				wei_zhi = 0;
+				position = 0;
 			}
 			else
 			{
-				zhuang_tai = 3;
+				status = 3;
 				textBox2.Visible = true;
 				textBox2.Location = panel1.Location;
 				textBox2.Focus();
@@ -1826,19 +1813,19 @@ namespace MiniEngraver
 
 		private void button10_MouseDown(object sender, MouseEventArgs e)
 		{
-			anxia = true;
+			down = true;
 			shu_x = e.X;
 			shu_y = e.Y;
 		}
 
 		private void button10_MouseUp(object sender, MouseEventArgs e)
 		{
-			anxia = false;
+			down = false;
 		}
 
 		private void button10_MouseMove(object sender, MouseEventArgs e)
 		{
-			if (!anxia)
+			if (!down)
 			{
 				return;
 			}
@@ -1901,14 +1888,14 @@ namespace MiniEngraver
 
 		private void button9_MouseDown(object sender, MouseEventArgs e)
 		{
-			anxia = true;
+			down = true;
 			shu_x = e.X;
 			shu_y = e.Y;
 		}
 
 		private void button9_MouseMove(object sender, MouseEventArgs e)
 		{
-			if (anxia)
+			if (down)
 			{
 				textBox2.Width = button9.Location.X - textBox2.Location.X;
 				textBox2.Height = button9.Location.Y - textBox2.Location.Y;
@@ -1918,7 +1905,7 @@ namespace MiniEngraver
 
 		private void button9_MouseUp(object sender, MouseEventArgs e)
 		{
-			anxia = false;
+			down = false;
 			if (textBox2.Width > 500)
 			{
 				textBox2.Width = 500;
@@ -1952,13 +1939,13 @@ namespace MiniEngraver
 
 		private void button8_Click(object sender, EventArgs e)
 		{
-			_ = wei_zhi;
+			_ = position;
 			_ = 0;
 		}
 
 		private void button7_Click(object sender, EventArgs e)
 		{
-			_ = wei_zhi;
+			_ = position;
 			_ = engraver.kuan_gao;
 		}
 
@@ -2113,9 +2100,9 @@ namespace MiniEngraver
 		{
 			if (!textBox2.Visible)
 			{
-				if (zhuang_tai == 2)
+				if (status == 2)
 				{
-					engraver.duoji2(jdt, zhixian);
+					engraver.duoji2(jdt, line);
 				}
 				else
 				{
@@ -2137,8 +2124,8 @@ namespace MiniEngraver
 
 		private void button18_Click(object sender, EventArgs e)
 		{
-			suofang += 5;
-			Bitmap image = new Bitmap(tu_xiang.suofang(tu, engraver.kuan_gao + suofang, engraver.kuan_gao + suofang));
+			zoom += 5;
+			Bitmap image = new Bitmap(tu_xiang.zoom(tu, engraver.kuan_gao + zoom, engraver.kuan_gao + zoom));
 			Graphics.FromImage(engraver.tu).DrawImage(image, 0, 0);
 			engraver.tu_pian = engraver.dou_dong(contrast.Value);
 			shu_xin();
@@ -2146,8 +2133,8 @@ namespace MiniEngraver
 
 		private void button19_Click(object sender, EventArgs e)
 		{
-			suofang -= 5;
-			Bitmap image = new Bitmap(tu_xiang.suofang(tu, engraver.kuan_gao + suofang, engraver.kuan_gao + suofang));
+			zoom -= 5;
+			Bitmap image = new Bitmap(tu_xiang.zoom(tu, engraver.kuan_gao + zoom, engraver.kuan_gao + zoom));
 			Graphics graphics = Graphics.FromImage(engraver.tu);
 			graphics.Clear(Color.White);
 			graphics.DrawImage(image, 0, 0);
@@ -2171,14 +2158,14 @@ namespace MiniEngraver
 			if (!(button1.Text == str2))
 			{
 				hei_dian_shu = 0;
-				ting_zhi = true;
+				stop = true;
 				kai_shi = false;
-				wei_zhi = 0;
-				hua2 = false;
+				position = 0;
+				multicolor2 = false;
 				if (tj)
 				{
 					button29.Text = str8;
-					engraver.ting_zhi_tj();
+					engraver.stop_tj();
 				}
 			}
 		}
@@ -2216,7 +2203,7 @@ namespace MiniEngraver
 
 		private void button23_Click(object sender, EventArgs e)
 		{
-			if (zhuang_tai != 2 && engraver.tu_pian != null)
+			if (status != 2 && engraver.tu_pian != null)
 			{
 				gai_bian = true;
 				if (ca)
@@ -2236,7 +2223,7 @@ namespace MiniEngraver
 		{
 			if (!kai_shi)
 			{
-				wenben = "";
+				text = "";
 				textBox2.Text = "";
 				Graphics graphics = Graphics.FromImage(new Bitmap(1, 1));
 				graphics.Clear(Color.White);
@@ -2268,7 +2255,7 @@ namespace MiniEngraver
 
 		private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
 		{
-			anxia3 = false;
+			down3 = false;
 			panel1.Refresh();
 		}
 
@@ -2645,7 +2632,7 @@ namespace MiniEngraver
 				button35_Click(null, null);
 			}
 			kai_shi = true;
-			ting_zhi = false;
+			stop = false;
 			if (grayscale.Checked)
 			{
 				engraverke_hui();
@@ -3032,14 +3019,14 @@ namespace MiniEngraver
 
 		private void textBox2_MouseDown(object sender, MouseEventArgs e)
 		{
-			bjk_anxia = true;
+			bjk_down = true;
 			bjk_x = e.X;
 			bjk_y = e.Y;
 		}
 
 		private void textBox2_MouseMove(object sender, MouseEventArgs e)
 		{
-			if (bjk_anxia)
+			if (bjk_down)
 			{
 				textBox2.Location = new Point(textBox2.Location.X + (e.X - bjk_x), textBox2.Location.Y + (e.Y - bjk_y));
 			}
@@ -3047,7 +3034,7 @@ namespace MiniEngraver
 
 		private void textBox2_MouseUp(object sender, MouseEventArgs e)
 		{
-			bjk_anxia = false;
+			bjk_down = false;
 			if (textBox2.Location.X < 25)
 			{
 				textBox2.Location = new Point(25, textBox2.Location.Y);
@@ -3127,12 +3114,12 @@ namespace MiniEngraver
 						if (kai_shi)
 						{
 							hei_dian_shu = 0;
-							ting_zhi = true;
+							stop = true;
 							zan_ting = false;
 							zan_ting2 = false;
 							kai_shi = false;
-							wei_zhi = 0;
-							hua2 = false;
+							position = 0;
+							multicolor2 = false;
 							button29.Text = str8;
 						}
 						panel2.Refresh();
@@ -3318,14 +3305,14 @@ namespace MiniEngraver
 
 		private void label16_MouseDown(object sender, MouseEventArgs e)
 		{
-			z_anxia = true;
+			z_down = true;
 			z_x = e.X;
 			z_y = e.Y;
 		}
 
 		private void label16_MouseMove(object sender, MouseEventArgs e)
 		{
-			if (z_anxia)
+			if (z_down)
 			{
 				panel6.Location = new Point(panel6.Location.X + (e.X - z_x), panel6.Location.Y + (e.Y - z_y));
 			}
@@ -3415,7 +3402,7 @@ namespace MiniEngraver
 
 		private void label16_MouseUp(object sender, MouseEventArgs e)
 		{
-			z_anxia = false;
+			z_down = false;
 		}
 
 		private void button35_Click(object sender, EventArgs e)
@@ -4112,9 +4099,9 @@ namespace MiniEngraver
             this.li_san.AutoSize = true;
             this.li_san.Location = new System.Drawing.Point(6, 47);
             this.li_san.Name = "li_san";
-            this.li_san.Size = new System.Drawing.Size(49, 17);
+            this.li_san.Size = new System.Drawing.Size(64, 17);
             this.li_san.TabIndex = 50;
-            this.li_san.Text = "离散";
+            this.li_san.Text = "Discrete";
             this.li_san.UseVisualStyleBackColor = true;
             this.li_san.CheckedChanged += new System.EventHandler(this.li_san_CheckedChanged);
             this.li_san.MouseDown += new System.Windows.Forms.MouseEventHandler(this.li_san_MouseDown);
@@ -4128,7 +4115,6 @@ namespace MiniEngraver
             this.grayscale.TabIndex = 51;
             this.grayscale.Text = "Grayscale";
             this.grayscale.UseVisualStyleBackColor = true;
-            this.grayscale.Visible = true;
             this.grayscale.CheckedChanged += new System.EventHandler(this.grayscale_CheckedChanged);
             // 
             // textBox3
@@ -4281,7 +4267,7 @@ namespace MiniEngraver
             this.groupBox2.Size = new System.Drawing.Size(230, 54);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "レーザー彫刻パラメータ調整";
+            this.groupBox2.Text = "Depth";
             // 
             // groupBox3
             // 
@@ -4303,7 +4289,7 @@ namespace MiniEngraver
             this.groupBox3.Size = new System.Drawing.Size(229, 221);
             this.groupBox3.TabIndex = 55;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "レーザー位置調整";
+            this.groupBox3.Text = "Laser Positioning";
             this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // textBox8
@@ -4348,18 +4334,18 @@ namespace MiniEngraver
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(119, 196);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(37, 13);
+            this.label19.Size = new System.Drawing.Size(38, 13);
             this.label19.TabIndex = 36;
-            this.label19.Text = "高度：";
+            this.label19.Text = "Height";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(6, 196);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(37, 13);
+            this.label18.Size = new System.Drawing.Size(35, 13);
             this.label18.TabIndex = 35;
-            this.label18.Text = "宽度：";
+            this.label18.Text = "Width";
             // 
             // button30
             // 
@@ -4368,7 +4354,7 @@ namespace MiniEngraver
             this.button30.Name = "button30";
             this.button30.Size = new System.Drawing.Size(67, 37);
             this.button30.TabIndex = 28;
-            this.button30.Text = "中心に戻る";
+            this.button30.Text = "Back to center";
             this.button30.UseVisualStyleBackColor = false;
             this.button30.Click += new System.EventHandler(this.button30_Click);
             // 
@@ -4379,7 +4365,7 @@ namespace MiniEngraver
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(75, 39);
             this.button28.TabIndex = 26;
-            this.button28.Text = "彫刻範囲プレビュー";
+            this.button28.Text = "Preview";
             this.button28.UseVisualStyleBackColor = false;
             this.button28.Click += new System.EventHandler(this.button28_Click);
             // 
@@ -4390,7 +4376,7 @@ namespace MiniEngraver
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(75, 39);
             this.button26.TabIndex = 25;
-            this.button26.Text = "原点に戻る";
+            this.button26.Text = "Back to starting point";
             this.button26.UseVisualStyleBackColor = false;
             this.button26.Click += new System.EventHandler(this.button26_Click_1);
             // 
@@ -4535,7 +4521,7 @@ namespace MiniEngraver
             this.groupBox4.Size = new System.Drawing.Size(231, 54);
             this.groupBox4.TabIndex = 64;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "レーザー彫刻パラメータ調整";
+            this.groupBox4.Text = "Laser Power";
             // 
             // button36
             // 
@@ -4676,7 +4662,7 @@ namespace MiniEngraver
             this.groupBox5.Size = new System.Drawing.Size(231, 62);
             this.groupBox5.TabIndex = 78;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "groupBox5";
+            this.groupBox5.Text = "Contrast";
             // 
             // toolTip1
             // 
@@ -4849,7 +4835,7 @@ namespace MiniEngraver
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "激光雕刻机";
+            this.Text = "Laser Engraver V2.0";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Form1_DragDrop);
