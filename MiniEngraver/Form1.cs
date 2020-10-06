@@ -55,9 +55,9 @@ namespace MiniEngraver
 
 		private int zoom;
 
-		public Form guan;
+		public Form off;
 
-		private Bitmap tu;
+		private Bitmap picture;
 
 		private bool fan_se;
 
@@ -615,7 +615,7 @@ namespace MiniEngraver
 			{
 				if (checkBox2.Checked)
 				{
-					engraver.guan_kuang();
+					engraver.off_kuang();
 				}
 				_ = kai_shi;
 				timer2.Enabled = false;
@@ -645,7 +645,7 @@ namespace MiniEngraver
 				}
 				num3 = (double)bb2.Width * 1.0 / (double)num2;
 				num = (int)((double)bb2.Height / num3);
-				engraver.tu = tu_xiang.zoom(bb2, num2, num);
+				engraver.picture = tu_xiang.zoom(bb2, num2, num);
 			}
 			else
 			{
@@ -660,7 +660,7 @@ namespace MiniEngraver
 				}
 				num3 = (double)bb2.Height * 1.0 / (double)num;
 				num2 = (int)((double)bb2.Width / num3);
-				engraver.tu = tu_xiang.zoom(bb2, num2, num);
+				engraver.picture = tu_xiang.zoom(bb2, num2, num);
 			}
 		}
 
@@ -688,7 +688,7 @@ namespace MiniEngraver
 				_ = bj2[3];
 				_ = bj2[2];
 				double num3 = (double)num / (double)num2;
-				engraver.tu = tu_xiang.zoom(bb2, (int)((double)bb2.Width * num3), (int)((double)bb2.Height * num3));
+				engraver.picture = tu_xiang.zoom(bb2, (int)((double)bb2.Width * num3), (int)((double)bb2.Height * num3));
 			}
 			if (hei_bai.Checked)
 			{
@@ -722,9 +722,9 @@ namespace MiniEngraver
 			int num2 = 0;
 			double num3 = 0.0;
 			Bitmap bitmap = new Bitmap(fileName);
-			tu = new Bitmap(bitmap);
+			picture = new Bitmap(bitmap);
 			bitmap.Dispose();
-			engraver.tu = tu;
+			engraver.picture = picture;
 			contrast.Value = 128;
 			trackBar3.Value = trackBar3.Maximum / 2 + 10;
 			if (hei_bai.Checked)
@@ -754,22 +754,22 @@ namespace MiniEngraver
 			bj[3] = bj2[3];
 			bai_bian_k = (double)(bj[1] - bj[0]) / (double)engraver.tu_pian.Width;
 			bai_bian_g = (double)(bj[3] - bj[2]) / (double)engraver.tu_pian.Height;
-			if (tu.Width > 1600 || tu.Height > 1520)
+			if (picture.Width > 1600 || picture.Height > 1520)
 			{
-				if (tu.Width - 1600 > tu.Height - 1520)
+				if (picture.Width - 1600 > picture.Height - 1520)
 				{
-					num3 = (double)tu.Width / 1600.0;
-					num = (int)((double)tu.Height / num3);
-					tu = tu_xiang.zoom(tu, 1600, num);
+					num3 = (double)picture.Width / 1600.0;
+					num = (int)((double)picture.Height / num3);
+					picture = tu_xiang.zoom(picture, 1600, num);
 				}
 				else
 				{
-					num3 = (double)tu.Height / 1520.0;
-					num2 = (int)((double)tu.Width / num3);
-					tu = tu_xiang.zoom(tu, num2, 1520);
+					num3 = (double)picture.Height / 1520.0;
+					num2 = (int)((double)picture.Width / num3);
+					picture = tu_xiang.zoom(picture, num2, 1520);
 				}
 			}
-			engraver.tu = tu;
+			engraver.picture = picture;
 			contrast.Value = 128;
 			trackBar3.Value = trackBar3.Maximum / 2 + 10;
 			if (hei_bai.Checked)
@@ -837,7 +837,7 @@ namespace MiniEngraver
 
 		private void hua_wen_zi()
 		{
-			float num = (float)((double)panel1.Width * 3.2) / (float)tu.Width;
+			float num = (float)((double)panel1.Width * 3.2) / (float)picture.Width;
 			Bitmap bitmap = new Bitmap((int)((float)w_z.Width / num), (int)((float)w_z.Height / num));
 			Graphics graphics = Graphics.FromImage(bitmap);
 			graphics.Clear(Color.White);
@@ -848,9 +848,9 @@ namespace MiniEngraver
 			{
 				for (int j = 1; j < bitmap.Height; j++)
 				{
-					if (bitmap.GetPixel(i, j).B < 1 && (int)((float)wz_weizhi.X / num + (float)i) < tu.Width && (int)((float)wz_weizhi.Y / num + (float)j) < tu.Height && (int)((float)wz_weizhi.X / num + (float)i) > 0 && (int)((float)wz_weizhi.Y / num + (float)j) > 0)
+					if (bitmap.GetPixel(i, j).B < 1 && (int)((float)wz_weizhi.X / num + (float)i) < picture.Width && (int)((float)wz_weizhi.Y / num + (float)j) < picture.Height && (int)((float)wz_weizhi.X / num + (float)i) > 0 && (int)((float)wz_weizhi.Y / num + (float)j) > 0)
 					{
-						tu.SetPixel((int)((float)wz_weizhi.X / num + (float)i), (int)((float)wz_weizhi.Y / num + (float)j), Color.Black);
+						picture.SetPixel((int)((float)wz_weizhi.X / num + (float)i), (int)((float)wz_weizhi.Y / num + (float)j), Color.Black);
 					}
 				}
 			}
@@ -859,7 +859,7 @@ namespace MiniEngraver
 
 		private void quan_bu_shua_xin()
 		{
-			if (tu == null && !(textBox2.Text != ""))
+			if (picture == null && !(textBox2.Text != ""))
 			{
 				return;
 			}
@@ -870,28 +870,28 @@ namespace MiniEngraver
 					if (wzms)
 					{
 						bj = tu_xiang.qu_bian_jie2(w_z);
-						tu = new Bitmap(w_z.Width, w_z.Height);
-						Graphics graphics = Graphics.FromImage(tu);
+						picture = new Bitmap(w_z.Width, w_z.Height);
+						Graphics graphics = Graphics.FromImage(picture);
 						graphics.DrawImage(w_z, 0, 0, w_z.Width, w_z.Height);
 						graphics.Dispose();
-						bj2 = tu_xiang.qu_bian_jie2(tu);
+						bj2 = tu_xiang.qu_bian_jie2(picture);
 						bj[0] = bj2[0];
 						bj[1] = bj2[1];
 						bj[2] = bj2[2];
 						bj[3] = bj2[3];
-						bai_bian_k = (double)(bj[1] - bj[0]) / (double)tu.Width;
-						bai_bian_g = (double)(bj[3] - bj[2]) / (double)tu.Height;
+						bai_bian_k = (double)(bj[1] - bj[0]) / (double)picture.Width;
+						bai_bian_g = (double)(bj[3] - bj[2]) / (double)picture.Height;
 						diyi = true;
 						kg_bi = (double)(bj[1] - bj[0]) / (double)(bj[3] - bj[2]);
 						if (mm_in)
 						{
-							textBox7.Text = ((int)((double)tu.Width * 0.05)).ToString();
-							textBox8.Text = ((int)((double)tu.Height * 0.05)).ToString();
+							textBox7.Text = ((int)((double)picture.Width * 0.05)).ToString();
+							textBox8.Text = ((int)((double)picture.Height * 0.05)).ToString();
 						}
 						else
 						{
-							textBox7.Text = ((int)((double)tu.Width * 0.05 * 0.0393701)).ToString().Substring(0, 5);
-							textBox8.Text = ((int)((double)tu.Height * 0.05 * 0.0393701)).ToString().Substring(0, 5);
+							textBox7.Text = ((int)((double)picture.Width * 0.05 * 0.0393701)).ToString().Substring(0, 5);
+							textBox8.Text = ((int)((double)picture.Height * 0.05 * 0.0393701)).ToString().Substring(0, 5);
 						}
 						diyi = false;
 						xianzhi();
@@ -902,9 +902,9 @@ namespace MiniEngraver
 						hua_wen_zi();
 					}
 				}
-				if (tu != null)
+				if (picture != null)
 				{
-					suo_fang(tu);
+					suo_fang(picture);
 					xianzhi();
 				}
 				gai_bian = false;
@@ -1073,7 +1073,7 @@ namespace MiniEngraver
 		{
 			Graphics graphics = Graphics.FromImage(engraver.tu_pian);
 			Point point = default(Point);
-			engraver.guan_ruo_guang();
+			engraver.off_ruo_offg();
 			bool flag = multicolor2;
 			if (flag)
 			{
@@ -1099,7 +1099,7 @@ namespace MiniEngraver
 					if (line[i].X == 601)
 					{
 						flag = false;
-						engraver.guan_deng();
+						engraver.off_deng();
 						engraver.gai_bian_F(0);
 					}
 				}
@@ -1283,7 +1283,7 @@ namespace MiniEngraver
 							}
 							else
 							{
-								engraver.guan_feng2();
+								engraver.off_feng2();
 							}
 							feng_shang = false;
 						}
@@ -1479,7 +1479,7 @@ namespace MiniEngraver
 							}
 							else
 							{
-								engraver.guan_feng2();
+								engraver.off_feng2();
 							}
 							feng_shang = false;
 						}
@@ -1629,7 +1629,7 @@ namespace MiniEngraver
 						}
 						else
 						{
-							engraver.guan_feng2();
+							engraver.off_feng2();
 						}
 						feng_shang = false;
 					}
@@ -1932,7 +1932,7 @@ namespace MiniEngraver
 				{
 					gai_bian = true;
 					shu_xin();
-					engraver.guan_kuang2();
+					engraver.off_kuang2();
 				}
 			}
 		}
@@ -2083,7 +2083,7 @@ namespace MiniEngraver
 
 		private void button15_Click(object sender, EventArgs e)
 		{
-			engraver.guan_ruo_guang();
+			engraver.off_ruo_offg();
 			engraver.dian_deng(laserDepth.Value);
 		}
 
@@ -2125,8 +2125,8 @@ namespace MiniEngraver
 		private void button18_Click(object sender, EventArgs e)
 		{
 			zoom += 5;
-			Bitmap image = new Bitmap(tu_xiang.zoom(tu, engraver.kuan_gao + zoom, engraver.kuan_gao + zoom));
-			Graphics.FromImage(engraver.tu).DrawImage(image, 0, 0);
+			Bitmap image = new Bitmap(tu_xiang.zoom(picture, engraver.kuan_gao + zoom, engraver.kuan_gao + zoom));
+			Graphics.FromImage(engraver.picture).DrawImage(image, 0, 0);
 			engraver.tu_pian = engraver.dou_dong(contrast.Value);
 			shu_xin();
 		}
@@ -2134,8 +2134,8 @@ namespace MiniEngraver
 		private void button19_Click(object sender, EventArgs e)
 		{
 			zoom -= 5;
-			Bitmap image = new Bitmap(tu_xiang.zoom(tu, engraver.kuan_gao + zoom, engraver.kuan_gao + zoom));
-			Graphics graphics = Graphics.FromImage(engraver.tu);
+			Bitmap image = new Bitmap(tu_xiang.zoom(picture, engraver.kuan_gao + zoom, engraver.kuan_gao + zoom));
+			Graphics graphics = Graphics.FromImage(engraver.picture);
 			graphics.Clear(Color.White);
 			graphics.DrawImage(image, 0, 0);
 			engraver.tu_pian = engraver.dou_dong(contrast.Value);
@@ -2172,9 +2172,9 @@ namespace MiniEngraver
 
 		private void button21_Click(object sender, EventArgs e)
 		{
-			if (!kai_shi && tu != null)
+			if (!kai_shi && picture != null)
 			{
-				tu.RotateFlip(RotateFlipType.RotateNoneFlipX);
+				picture.RotateFlip(RotateFlipType.RotateNoneFlipX);
 				gai_bian = true;
 				shu_xin();
 			}
@@ -2182,9 +2182,9 @@ namespace MiniEngraver
 
 		private void button22_Click(object sender, EventArgs e)
 		{
-			if (!kai_shi && tu != null)
+			if (!kai_shi && picture != null)
 			{
-				tu.RotateFlip(RotateFlipType.Rotate180FlipX);
+				picture.RotateFlip(RotateFlipType.Rotate180FlipX);
 				gai_bian = true;
 				shu_xin();
 			}
@@ -2192,9 +2192,9 @@ namespace MiniEngraver
 
 		private void button25_Click(object sender, EventArgs e)
 		{
-			if (!kai_shi && tu != null)
+			if (!kai_shi && picture != null)
 			{
-				tu.RotateFlip(RotateFlipType.Rotate90FlipNone);
+				picture.RotateFlip(RotateFlipType.Rotate90FlipNone);
 				gai_bian = true;
 				panel1.Refresh();
 				pan_yidong();
@@ -2228,14 +2228,14 @@ namespace MiniEngraver
 				Graphics graphics = Graphics.FromImage(new Bitmap(1, 1));
 				graphics.Clear(Color.White);
 				graphics.Dispose();
-				tu = null;
-				engraver.tu = null;
+				picture = null;
+				engraver.picture = null;
 				engraver.tu_pian = null;
 				fileName = "";
 				w_z = null;
 				if (checkBox2.Checked)
 				{
-					engraver.guan_kuang();
+					engraver.off_kuang();
 					checkBox2.Checked = false;
 				}
 				wzms = true;
@@ -2477,7 +2477,7 @@ namespace MiniEngraver
 			else if (fen)
 			{
 				fen = false;
-				engraver.guan_feng();
+				engraver.off_feng();
 			}
 			else
 			{
@@ -2608,7 +2608,7 @@ namespace MiniEngraver
 				MessageBox.Show(str23);
 				return;
 			}
-			if (tu == null && textBox2.Text == "")
+			if (picture == null && textBox2.Text == "")
 			{
 				MessageBox.Show(str24);
 				return;
@@ -2810,7 +2810,7 @@ namespace MiniEngraver
 				MessageBox.Show(str23);
 				return;
 			}
-			if (tu == null && textBox2.Text == "")
+			if (picture == null && textBox2.Text == "")
 			{
 				MessageBox.Show(str24);
 				return;

@@ -18,7 +18,7 @@ namespace MiniEngraver
 
 		public int y;
 
-		public Bitmap tu;
+		public Bitmap picture;
 
 		public Bitmap tu_pian;
 
@@ -34,7 +34,7 @@ namespace MiniEngraver
 		{
 			tu_pian = new Bitmap(10, 10);
 			Graphics.FromImage(tu_pian).Clear(Color.White);
-			tu = tu_pian;
+			picture = tu_pian;
 			com = p;
 		}
 
@@ -388,7 +388,7 @@ namespace MiniEngraver
 
 		public Bitmap grayscale(int zhi)
 		{
-			Bitmap bitmap = new Bitmap(tu);
+			Bitmap bitmap = new Bitmap(picture);
 			Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
 			BitmapData bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
 			IntPtr scan = bitmapData.Scan0;
@@ -428,11 +428,11 @@ namespace MiniEngraver
 
 		public Bitmap hei_bai(int zhi)
 		{
-			if (tu == null)
+			if (picture == null)
 			{
 				return null;
 			}
-			Bitmap bitmap = new Bitmap(tu);
+			Bitmap bitmap = new Bitmap(picture);
 			Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
 			BitmapData bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
 			IntPtr scan = bitmapData.Scan0;
@@ -462,7 +462,7 @@ namespace MiniEngraver
 		public int qu_hei_dian()
 		{
 			int num = 0;
-			Bitmap bitmap = new Bitmap(tu);
+			Bitmap bitmap = new Bitmap(picture);
 			Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
 			BitmapData bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
 			IntPtr scan = bitmapData.Scan0;
@@ -485,7 +485,7 @@ namespace MiniEngraver
 
 		public Bitmap dou_dong2(int zhi)
 		{
-			Bitmap bitmap = new Bitmap(tu);
+			Bitmap bitmap = new Bitmap(picture);
 			Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
 			BitmapData bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
 			IntPtr scan = bitmapData.Scan0;
@@ -572,7 +572,7 @@ namespace MiniEngraver
 
 		public Bitmap dou_dong(int zhi)
 		{
-			Bitmap bitmap = new Bitmap(tu);
+			Bitmap bitmap = new Bitmap(picture);
 			Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
 			BitmapData bitmapData = bitmap.LockBits(rect, ImageLockMode.ReadWrite, bitmap.PixelFormat);
 			IntPtr scan = bitmapData.Scan0;
@@ -770,7 +770,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public bool guan_kuang2()
+		public bool off_kuang2()
 		{
 			if (!com.IsOpen)
 			{
@@ -934,7 +934,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public bool guan_deng()
+		public bool off_deng()
 		{
 			if (!com.IsOpen)
 			{
@@ -1112,7 +1112,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public bool guan_feng()
+		public bool off_feng()
 		{
 			if (!com.IsOpen)
 			{
@@ -1147,7 +1147,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public bool guan_feng2()
+		public bool off_feng2()
 		{
 			if (!com.IsOpen)
 			{
@@ -1643,7 +1643,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public bool guan_kuang()
+		public bool off_kuang()
 		{
 			if (!com.IsOpen)
 			{
@@ -1772,7 +1772,7 @@ namespace MiniEngraver
 			return true;
 		}
 
-		public bool guan_ruo_guang()
+		public bool off_ruo_offg()
 		{
 			return true;
 		}

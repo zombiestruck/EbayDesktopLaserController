@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace MiniEngraver
 {
-	public class guanyu : Form
+	public class offyu : Form
 	{
 		private IContainer components;
 
@@ -28,12 +28,12 @@ namespace MiniEngraver
 
 		private Button button1;
 
-		public guanyu()
+		public offyu()
 		{
 			InitializeComponent();
 		}
 
-		private void guanyu_Load(object sender, EventArgs e)
+		private void offyu_Load(object sender, EventArgs e)
 		{
 			linkLabel1.Links.Add(0, 4, "http://blog.sina.com.cn/mcudiyck");
 			linkLabel2.Links.Add(0, 4, "https://engraverkejidiy.taobao.com/");
@@ -66,7 +66,7 @@ namespace MiniEngraver
 
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniEngraver.guanyu));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniEngraver.offyu));
 			panel1 = new System.Windows.Forms.Panel();
 			label1 = new System.Windows.Forms.Label();
 			label2 = new System.Windows.Forms.Label();
@@ -161,9 +161,9 @@ namespace MiniEngraver
 			base.Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
 			base.MaximizeBox = false;
 			base.MinimizeBox = false;
-			base.Name = "guanyu";
+			base.Name = "offyu";
 			Text = "关于";
-			base.Load += new System.EventHandler(guanyu_Load);
+			base.Load += new System.EventHandler(offyu_Load);
 			ResumeLayout(false);
 			PerformLayout();
 		}
