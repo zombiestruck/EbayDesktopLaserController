@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace 微型雕刻机2
+namespace MiniEngraver
 {
 	public class TransTextBox : TextBox
 	{

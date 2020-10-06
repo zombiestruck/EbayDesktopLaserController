@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace 微型雕刻机2
+namespace MiniEngraver
 {
 	public struct tu_kuan_gao
 	{

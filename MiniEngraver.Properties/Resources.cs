@@ -5,7 +5,7 @@ using System.Globalization;
 using System.Resources;
 using System.Runtime.CompilerServices;
 
-namespace 微型雕刻机2.Properties
+namespace MiniEngraver.Properties
 {
 	[GeneratedCode("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
 	[DebuggerNonUserCode]
@@ -23,7 +23,7 @@ namespace 微型雕刻机2.Properties
 			{
 				if (resourceMan == null)
 				{
-					resourceMan = new ResourceManager("微型雕刻机2.Properties.Resources", typeof(Resources).Assembly);
+					resourceMan = new ResourceManager("MiniEngraver.Properties.Resources", typeof(Resources).Assembly);
 				}
 				return resourceMan;
 			}

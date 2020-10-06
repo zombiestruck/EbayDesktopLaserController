@@ -2,7 +2,7 @@ using System.CodeDom.Compiler;
 using System.Configuration;
 using System.Runtime.CompilerServices;
 
-namespace 微型雕刻机2.Properties
+namespace MiniEngraver.Properties
 {
 	[CompilerGenerated]
 	[GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]

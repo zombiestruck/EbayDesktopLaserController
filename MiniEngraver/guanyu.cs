@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace 微型雕刻机2
+namespace MiniEngraver
 {
 	public class guanyu : Form
 	{
@@ -66,7 +66,7 @@ namespace 微型雕刻机2
 
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(微型雕刻机2.guanyu));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MiniEngraver.guanyu));
 			panel1 = new System.Windows.Forms.Panel();
 			label1 = new System.Windows.Forms.Label();
 			label2 = new System.Windows.Forms.Label();

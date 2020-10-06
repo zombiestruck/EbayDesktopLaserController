@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 
-namespace 微型雕刻机2
+namespace MiniEngraver
 {
 	internal class g_dai_ma
 	{

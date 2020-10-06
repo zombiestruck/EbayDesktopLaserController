@@ -1,7 +1,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace 微型雕刻机2
+namespace MiniEngraver
 {
 	internal static class Program
 	{
