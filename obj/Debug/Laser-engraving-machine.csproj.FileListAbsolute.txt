@@ -21,3 +21,4 @@ C:\Users\William\Documents\GitHub\EbayDesktopLaserController\obj\Debug\Laser-eng
 C:\Users\William\Documents\GitHub\EbayDesktopLaserController\obj\Debug\Laser-engraving-machine.csproj.CopyComplete
 C:\Users\William\Documents\GitHub\EbayDesktopLaserController\obj\Debug\微型雕刻机.exe
 C:\Users\William\Documents\GitHub\EbayDesktopLaserController\obj\Debug\微型雕刻机.pdb
+C:\Users\William\Documents\GitHub\EbayDesktopLaserController\obj\Debug\Laser-engraving-machine.csprojAssemblyReference.cache

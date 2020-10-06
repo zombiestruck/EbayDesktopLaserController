@@ -386,7 +386,7 @@ namespace MiniEngraver
 			return false;
 		}
 
-		public Bitmap hui_du(int zhi)
+		public Bitmap grayscale(int zhi)
 		{
 			Bitmap bitmap = new Bitmap(tu);
 			Rectangle rect = new Rectangle(0, 0, bitmap.Width, bitmap.Height);
