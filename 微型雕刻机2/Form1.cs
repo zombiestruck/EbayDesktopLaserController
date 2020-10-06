@@ -16,13 +16,6 @@ namespace 微型雕刻机2
 	{
 		public delegate void MyInvoke();
 
-		public struct wen_ben
-		{
-			public Bitmap wen_zi;
-
-			public Point diao;
-		}
-
 		[Flags]
 		private enum ExecutionFlag : uint
 		{
